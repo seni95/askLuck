@@ -126,141 +126,14 @@ const Logic = (props) => {
         const minutes = Number(minutesString);
         let timeGround = null;
 
-        switch (hour) {
-            case 1:
-                if (minutes < 30) {
-                    timeGround = ground[0];
-                } else {
-                    timeGround = ground[1];
-                }
-                break;
-
-            case 2:
-                timeGround = ground[1];
-                break;
-            case 3:
-                if (minutes < 30) {
-                    timeGround = ground[1];
-                } else {
-                    timeGround = ground[2];
-                }
-                break;
-            case 4:
-                timeGround = ground[2];
-                break;
-            case 5:
-                if (minutes < 30) {
-                    timeGround = ground[2];
-                } else {
-                    timeGround = ground[3];
-                }
-                break;
-
-            case 6:
-                timeGround = ground[3];
-                break;
-
-            case 7:
-                if (minutes < 30) {
-                    timeGround = ground[3];
-                } else {
-                    timeGround = ground[4];
-                }
-                break;
-
-            case 8:
-                timeGround = ground[4];
-                break;
-            case 9:
-                if (minutes < 30) {
-                    timeGround = ground[4];
-                } else {
-                    timeGround = ground[5];
-                }
-                break;
-            case 10:
-                timeGround = ground[5];
-                break;
-            case 11:
-                if (minutes < 30) {
-                    timeGround = ground[5];
-                } else {
-                    timeGround = ground[6];
-                }
-                break;
-
-            case 12:
-                timeGround = ground[6];
-                break;
-
-            case 13:
-                if (minutes < 30) {
-                    timeGround = ground[6];
-                } else {
-                    timeGround = ground[7];
-                }
-                break;
-            case 14:
-                timeGround = ground[7];
-                break;
-            case 15:
-                if (minutes < 30) {
-                    timeGround = ground[7];
-                } else {
-                    timeGround = ground[8];
-                }
-                break;
-            case 16:
-                timeGround = ground[8];
-                break;
-            case 17:
-                if (minutes < 30) {
-                    timeGround = ground[8];
-                } else {
-                    timeGround = ground[9];
-                }
-                break;
-
-            case 18:
-                timeGround = ground[9];
-                break;
-
-            case 19:
-                if (minutes < 30) {
-                    timeGround = ground[9];
-                } else {
-                    timeGround = ground[10];
-                }
-                break;
-
-            case 20:
-                timeGround = ground[10];
-                break;
-            case 21:
-                if (minutes < 30) {
-                    timeGround = ground[10];
-                } else {
-                    timeGround = ground[11];
-                }
-                break;
-            case 22:
-                timeGround = ground[11];
-                break;
-            case 23:
-                if (minutes < 30) {
-                    timeGround = ground[11];
-                } else {
-                    timeGround = ground[0];
-                }
-                break;
-
-            case 0:
-                timeGround = ground[0];
-                break;
+        let arrCheck = 0;
+        let arrNum = Math.floor(hour/2);
+        if(hour%2==1){
+            arrCheck = minutes<30 ? arrNum : ++arrNum;
         }
 
 
-        return timeGround.name;
+        return ground[arrCheck].name;
     })
 
 
