@@ -30,9 +30,9 @@ const Logic = (props) => {
         { name: "해", symbol: "수", sign: "음", key: 22 },
     ]
 
-    const selectedYear = 1990;
-    const selectedMonth = 5;
-    const selectedDay = 15;
+    const selectedYear = 1995;
+    const selectedMonth = 6;
+    const selectedDay = 26;
     const selectedTime = "09:50"
     // const selectedTime = props.selectedTime;
 
@@ -116,6 +116,62 @@ const Logic = (props) => {
         return ground[dayGround].name;
     })
 
+    const returnTimeSky = useCallback((selectedYear, selectedMonth, selectedDay,selectedTime)=>{
+        const standard = new Date(1925, 0, 10);
+        console.log(standard);
+        const daySkyCal = new Date(selectedYear, selectedMonth, selectedDay);
+        const diffDate = daySkyCal.getTime() - standard.getTime();
+        const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
+        const daySky = diffDateResult % 10;
+        const toCalculateTimeSky = sky[daySky].name;
+
+        let timeSkyCal = null;
+
+        switch (toCalculateTimeSky) {
+            case "갑":
+            case "기":
+                timeSkyCal = 0;
+                break;
+            case "을":
+            case "경":
+                timeSkyCal = 2;
+                break;
+
+            case "병":
+            case "신":
+                timeSkyCal = 4;
+                break;
+
+            case "정":
+            case "임":
+                timeSkyCal = 6;
+                break;
+
+            case "무":
+            case "계":
+                timeSkyCal = 8;
+                break;
+        }
+
+        const timeCal = JSON.stringify(selectedTime);
+        const hourString = timeCal.substring(1, 3);
+        const minutesString = timeCal.substring(4, 6);
+        const hour = Number(hourString);
+        const minutes = Number(minutesString);
+        let timeGround = null;
+
+        let arrCheck = 0;
+        let arrNum = Math.floor(hour/2);
+        if(hour%2==1){
+            arrCheck = minutes<30 ? arrNum : ++arrNum;
+        }
+        //8+5=13-12=1
+        const timeSky = timeSkyCal+arrNum < 10 ? timeSkyCal+arrNum : timeSkyCal+arrNum -10;
+        
+        return sky[timeSky].name;
+
+    })
+
     const returnTimeGround = useCallback((selectedTime) => {
 
 
@@ -149,6 +205,7 @@ const Logic = (props) => {
             {returnDaySky(selectedYear, selectedMonth, selectedDay)}
             {returnDayGround(selectedYear, selectedMonth, selectedDay)}
             ?
+            {returnTimeSky(selectedYear, selectedMonth, selectedDay,selectedTime)}
             {returnTimeGround(selectedTime)}
         </h1>
     )
