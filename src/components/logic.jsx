@@ -30,24 +30,41 @@ const Logic = (props) => {
         { name: "해", symbol: "수", sign: "음", key: 22 },
     ]
 
-    const selectedYear = 1995;
-    const selectedMonth = 2;
-    const selectedDay = 2;
-    const selectedTime = "09:50"
-    // const selectedTime = props.selectedTime;
+
+    const today={
+        year:new Date().getFullYear(),
+        month:new Date().getMonth()+1,
+        date:new Date().getDate()
+      }
+  
+
+    const selectedYear = props.selectedYear;
+    const selectedMonth = props.selectedMonth;
+    const selectedDay = props.selectedDay;
+    // const selectedTime = "09:50"
+    const selectedTime = props.selectedTime;
+
+    // const show = parseInt(props.selectedMonth);
+   
+    // const selectedYear = 2022;
+    // const selectedMonth =8;
+    // const selectedDay = 21;
+    // const selectedTime = "09:50";
 
 
     const returnYearSky = useCallback((selectedYear) => {
         const yearSkyCal = selectedYear % 10;
         const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;
+        
+
         return sky[yearSky].name;
-    }, [])
+    }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
     const returnYearGround = useCallback((selectedYear) => {
         const yearGroundCal = selectedYear % 12;
         const yearGround = yearGroundCal + 8 < 12 ? yearGroundCal + 8 : yearGroundCal + 8 - 12;
         return ground[yearGround].name;
-    }, [])
+    }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
     const returnMonthSky = useCallback((selectedYear, selectedMonth) => {
         const yearSkyCal = selectedYear % 10;
@@ -165,7 +182,7 @@ const Logic = (props) => {
         
         return sky[monthSky].name;
 
-    }, [])
+    }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
     const returnMonthGround = useCallback((selectedMonth, selectedDay) => {
         //12월의 경우 11로 들어온다.
@@ -250,7 +267,7 @@ const Logic = (props) => {
         console.log(monthGround);
 
         return ground[monthGround].name;
-    }, [])
+    }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
 
 
@@ -329,7 +346,7 @@ const Logic = (props) => {
 
         return sky[timeSky].name;
 
-    })
+    },[selectedYear,selectedMonth,selectedDay,selectedTime])
 
     const returnTimeGround = useCallback((selectedTime) => {
 
@@ -349,7 +366,7 @@ const Logic = (props) => {
 
 
         return ground[arrCheck].name;
-    })
+    },[selectedYear,selectedMonth,selectedDay,selectedTime])
 
 
 
@@ -357,15 +374,20 @@ const Logic = (props) => {
         <h1>
             {returnYearSky(selectedYear)}
             {returnYearGround(selectedYear)}
-            ?
+            /
             {returnMonthSky(selectedYear, selectedMonth)}
             {returnMonthGround(selectedMonth,selectedDay)}
-            ?
+            /
             {returnDaySky(selectedYear, selectedMonth, selectedDay)}
             {returnDayGround(selectedYear, selectedMonth, selectedDay)}
-            ?
+            /
             {returnTimeSky(selectedYear, selectedMonth, selectedDay, selectedTime)}
             {returnTimeGround(selectedTime)}
+            /
+            {console.log(props.selectedYear,props.selectedMonth,props.selectedDay,props.selectedTime)}
+            {console.log(selectedYear,selectedMonth,selectedTime,selectedDay+"??")}
+            /
+            {console.log(typeof(selectedYear))}
         </h1>
     )
 }
