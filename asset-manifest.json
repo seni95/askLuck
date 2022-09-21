@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/askLuck/static/css/main.073c9b0a.css",
+    "main.js": "/askLuck/static/js/main.69d21063.js",
+    "static/js/787.68f75430.chunk.js": "/askLuck/static/js/787.68f75430.chunk.js",
+    "static/media/logo.svg": "/askLuck/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/askLuck/index.html",
+    "main.073c9b0a.css.map": "/askLuck/static/css/main.073c9b0a.css.map",
+    "main.69d21063.js.map": "/askLuck/static/js/main.69d21063.js.map",
+    "787.68f75430.chunk.js.map": "/askLuck/static/js/787.68f75430.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.69d21063.js"
+  ]
+}
