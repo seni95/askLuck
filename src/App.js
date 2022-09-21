@@ -23,6 +23,7 @@ function App() {
     setSelectedYear(year);
     //그냥 month로 넣었을땐 왜 갑자만 뜬거임..?
     // setSelectedMonth(month);
+    //일주부터 시작해서 다 영향받았음..
     setSelectedMonth(month-1);
     setSelectedDay(day);
     setSelectedTime(time);

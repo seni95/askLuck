@@ -3,31 +3,31 @@ import React, { useCallback, useEffect, useState } from 'react'
 const Logic = (props) => {
 
     const sky = [
-        { name: "갑", symbol: "목", sign: "양", key: 1 },
-        { name: "을", symbol: "목", sign: "음", key: 2 },
-        { name: "병", symbol: "화", sign: "양", key: 3 },
-        { name: "정", symbol: "화", sign: "음", key: 4 },
-        { name: "무", symbol: "토", sign: "양", key: 5 },
-        { name: "기", symbol: "토", sign: "음", key: 6 },
-        { name: "경", symbol: "금", sign: "양", key: 7 },
-        { name: "신", symbol: "금", sign: "음", key: 8 },
-        { name: "임", symbol: "수", sign: "양", key: 9 },
-        { name: "계", symbol: "수", sign: "음", key: 10 }
+        { name: "갑", symbol: "목", sign: "양", key: 1 ,code:"甲"},
+        { name: "을", symbol: "목", sign: "음", key: 2 ,code:"乙"},
+        { name: "병", symbol: "화", sign: "양", key: 3 ,code:"丙"},
+        { name: "정", symbol: "화", sign: "음", key: 4 ,code:"丁"},
+        { name: "무", symbol: "토", sign: "양", key: 5 ,code:"戊"},
+        { name: "기", symbol: "토", sign: "음", key: 6 ,code:"己"},
+        { name: "경", symbol: "금", sign: "양", key: 7 ,code:"庚"},
+        { name: "신", symbol: "금", sign: "음", key: 8 ,code:"辛"},
+        { name: "임", symbol: "수", sign: "양", key: 9 ,code:"壬"},
+        { name: "계", symbol: "수", sign: "음", key: 10 ,code:"癸"}
     ];
 
     const ground = [
-        { name: "자", symbol: "수", sign: "음", key: 11 },
-        { name: "축", symbol: "토", sign: "음", key: 12 },
-        { name: "인", symbol: "목", sign: "양", key: 13 },
-        { name: "묘", symbol: "목", sign: "음", key: 14 },
-        { name: "진", symbol: "토", sign: "양", key: 15 },
-        { name: "사", symbol: "화", sign: "양", key: 16 },
-        { name: "오", symbol: "화", sign: "음", key: 17 },
-        { name: "미", symbol: "토", sign: "음", key: 18 },
-        { name: "신", symbol: "금", sign: "양", key: 19 },
-        { name: "유", symbol: "금", sign: "음", key: 20 },
-        { name: "술", symbol: "토", sign: "양", key: 21 },
-        { name: "해", symbol: "수", sign: "음", key: 22 },
+        { name: "자", symbol: "수", sign: "음", key: 11 ,code:"子"},
+        { name: "축", symbol: "토", sign: "음", key: 12 ,code:"丑"},
+        { name: "인", symbol: "목", sign: "양", key: 13 ,code:"寅"},
+        { name: "묘", symbol: "목", sign: "음", key: 14 ,code:"卯"},
+        { name: "진", symbol: "토", sign: "양", key: 15 ,code:"辰"},
+        { name: "사", symbol: "화", sign: "양", key: 16 ,code:"巳"},
+        { name: "오", symbol: "화", sign: "음", key: 17 ,code:"午"},
+        { name: "미", symbol: "토", sign: "음", key: 18 ,code:"未"},
+        { name: "신", symbol: "금", sign: "양", key: 19 ,code:"申"},
+        { name: "유", symbol: "금", sign: "음", key: 20 ,code:"酉"},
+        { name: "술", symbol: "토", sign: "양", key: 21 ,code:"戌"},
+        { name: "해", symbol: "수", sign: "음", key: 22 ,code:"亥"},
     ]
 
 
@@ -57,13 +57,13 @@ const Logic = (props) => {
         const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;
         
 
-        return sky[yearSky].name;
+        return sky[yearSky].code;
     }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
     const returnYearGround = useCallback((selectedYear) => {
         const yearGroundCal = selectedYear % 12;
         const yearGround = yearGroundCal + 8 < 12 ? yearGroundCal + 8 : yearGroundCal + 8 - 12;
-        return ground[yearGround].name;
+        return ground[yearGround].code;
     }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
     const returnMonthSky = useCallback((selectedYear, selectedMonth) => {
@@ -180,7 +180,7 @@ const Logic = (props) => {
                 break;
         }
         
-        return sky[monthSky].name;
+        return sky[monthSky].code;
 
     }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
@@ -266,7 +266,7 @@ const Logic = (props) => {
         }
         console.log(monthGround);
 
-        return ground[monthGround].name;
+        return ground[monthGround].code;
     }, [selectedYear,selectedMonth,selectedDay,selectedTime])
 
 
@@ -279,7 +279,7 @@ const Logic = (props) => {
         const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
         const daySky = diffDateResult % 10;
 
-        return sky[daySky].name;
+        return sky[daySky].code;
     })
 
     const returnDayGround = useCallback((selectedYear, selectedMonth, selectedDay) => {
@@ -289,7 +289,7 @@ const Logic = (props) => {
         const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
         const dayGround = diffDateResult % 12;
 
-        return ground[dayGround].name;
+        return ground[dayGround].code;
     })
 
     const returnTimeSky = useCallback((selectedYear, selectedMonth, selectedDay, selectedTime) => {
@@ -344,7 +344,7 @@ const Logic = (props) => {
         //8+5=13-12=1
         const timeSky = timeSkyCal + arrNum < 10 ? timeSkyCal + arrNum : timeSkyCal + arrNum - 10;
 
-        return sky[timeSky].name;
+        return sky[timeSky].code;
 
     },[selectedYear,selectedMonth,selectedDay,selectedTime])
 
@@ -365,7 +365,7 @@ const Logic = (props) => {
         }
 
 
-        return ground[arrCheck].name;
+        return ground[arrCheck].code;
     },[selectedYear,selectedMonth,selectedDay,selectedTime])
 
 
