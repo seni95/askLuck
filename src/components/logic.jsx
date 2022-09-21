@@ -31,8 +31,8 @@ const Logic = (props) => {
     ]
 
     const selectedYear = 1995;
-    const selectedMonth = 0;
-    const selectedDay = 3;
+    const selectedMonth = 2;
+    const selectedDay = 2;
     const selectedTime = "09:50"
     // const selectedTime = props.selectedTime;
 
@@ -90,74 +90,74 @@ const Logic = (props) => {
         switch (monthSkyCal3) {
             case 2:
                 if (selectedDay < 5) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
             case 3:
                 if (selectedDay < 7) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
 
             case 4:
                 if (selectedDay < 6) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 
                 }
                 break;
             case 5:
                 if (selectedDay < 6) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
 
             case 6:
                 if (selectedDay < 7) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
 
                 }
                 break;
 
             case 7:
                 if (selectedDay < 8) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
 
                 }
                 break;
 
             case 8:
                 if (selectedDay < 8) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                   
                 }
                 break;
 
             case 9:
                 if (selectedDay < 9) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
 
             case 10:
                 if (selectedDay < 9) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
 
             case 11:
                 if (selectedDay < 8) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
 
             case 0:
                 if (selectedDay < 8) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
                 break;
             case 1:
                 if (selectedDay < 7) {
-                    monthSky = monthSkyCal3-1
+                    monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                 }
 
                 break;
@@ -168,77 +168,81 @@ const Logic = (props) => {
     }, [])
 
     const returnMonthGround = useCallback((selectedMonth, selectedDay) => {
+        //12월의 경우 11로 들어온다.
 
+        let monthGroundCal = selectedMonth +1 < 12 ? selectedMonth + 1 : 0;
+        //여기서 1이 더해져서 12가 된다. 그래서 0으로 바뀐다. (자월)
+        
+        let monthGround = monthGroundCal;
 
-        let monthGroundCal = selectedMonth < 12 ? selectedMonth + 1 : 0;
-        let monthGround = 0
-        switch (monthGroundCal) {
+        let test = 0
+        switch (test) {
             case 2:
                 if (selectedDay < 5) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
             case 3:
                 if (selectedDay < 7) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 4:
                 if (selectedDay < 6) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
             case 5:
                 if (selectedDay < 6) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 6:
                 if (selectedDay < 7) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 7:
                 if (selectedDay < 8) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 8:
                 if (selectedDay < 8) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 9:
                 if (selectedDay < 9) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 10:
                 if (selectedDay < 9) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 11:
                 if (selectedDay < 8) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
 
             case 0:
                 if (selectedDay < 8) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
                 break;
             case 1:
                 if (selectedDay < 7) {
-                    monthGround = monthGroundCal-1;
+                    monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                 }
 
                 break;
@@ -355,7 +359,7 @@ const Logic = (props) => {
             {returnYearGround(selectedYear)}
             ?
             {returnMonthSky(selectedYear, selectedMonth)}
-            {returnMonthGround(selectedMonth)}
+            {returnMonthGround(selectedMonth,selectedDay)}
             ?
             {returnDaySky(selectedYear, selectedMonth, selectedDay)}
             {returnDayGround(selectedYear, selectedMonth, selectedDay)}
