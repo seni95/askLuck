@@ -31,8 +31,8 @@ const Logic = (props) => {
     ]
 
     const selectedYear = 1995;
-    const selectedMonth = 6;
-    const selectedDay = 26;
+    const selectedMonth = 0;
+    const selectedDay = 3;
     const selectedTime = "09:50"
     // const selectedTime = props.selectedTime;
 
@@ -83,13 +83,168 @@ const Logic = (props) => {
 
         const monthSkyCal2 = selectedMonth - 1;
         //2월부터 시작하니까 1을 빼줌. 
-        const monthSky = monthSkyCal + monthSkyCal2 < 10 ? monthSkyCal + monthSkyCal2 : monthSkyCal + monthSkyCal2 - 10;
+        const monthSkyCal3 = monthSkyCal + monthSkyCal2 < 10 ? monthSkyCal + monthSkyCal2 : monthSkyCal + monthSkyCal2 - 10;
+        
+        let monthSky = monthSkyCal3;
+
+        switch (monthSkyCal3) {
+            case 2:
+                if (selectedDay < 5) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+            case 3:
+                if (selectedDay < 7) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+
+            case 4:
+                if (selectedDay < 6) {
+                    monthSky = monthSkyCal3-1
+                
+                }
+                break;
+            case 5:
+                if (selectedDay < 6) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+
+            case 6:
+                if (selectedDay < 7) {
+                    monthSky = monthSkyCal3-1
+
+                }
+                break;
+
+            case 7:
+                if (selectedDay < 8) {
+                    monthSky = monthSkyCal3-1
+
+                }
+                break;
+
+            case 8:
+                if (selectedDay < 8) {
+                    monthSky = monthSkyCal3-1
+                  
+                }
+                break;
+
+            case 9:
+                if (selectedDay < 9) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+
+            case 10:
+                if (selectedDay < 9) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+
+            case 11:
+                if (selectedDay < 8) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+
+            case 0:
+                if (selectedDay < 8) {
+                    monthSky = monthSkyCal3-1
+                }
+                break;
+            case 1:
+                if (selectedDay < 7) {
+                    monthSky = monthSkyCal3-1
+                }
+
+                break;
+        }
+        
         return sky[monthSky].name;
 
     }, [])
 
-    const returnMonthGround = useCallback((selectedMonth) => {
-        const monthGround = selectedMonth < 12 ? selectedMonth + 1 : 0;
+    const returnMonthGround = useCallback((selectedMonth, selectedDay) => {
+
+
+        let monthGroundCal = selectedMonth < 12 ? selectedMonth + 1 : 0;
+        let monthGround = 0
+        switch (monthGroundCal) {
+            case 2:
+                if (selectedDay < 5) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+            case 3:
+                if (selectedDay < 7) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 4:
+                if (selectedDay < 6) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+            case 5:
+                if (selectedDay < 6) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 6:
+                if (selectedDay < 7) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 7:
+                if (selectedDay < 8) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 8:
+                if (selectedDay < 8) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 9:
+                if (selectedDay < 9) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 10:
+                if (selectedDay < 9) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 11:
+                if (selectedDay < 8) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+
+            case 0:
+                if (selectedDay < 8) {
+                    monthGround = monthGroundCal-1;
+                }
+                break;
+            case 1:
+                if (selectedDay < 7) {
+                    monthGround = monthGroundCal-1;
+                }
+
+                break;
+        }
+        console.log(monthGround);
+
         return ground[monthGround].name;
     }, [])
 
@@ -116,7 +271,7 @@ const Logic = (props) => {
         return ground[dayGround].name;
     })
 
-    const returnTimeSky = useCallback((selectedYear, selectedMonth, selectedDay,selectedTime)=>{
+    const returnTimeSky = useCallback((selectedYear, selectedMonth, selectedDay, selectedTime) => {
         const standard = new Date(1925, 0, 10);
         console.log(standard);
         const daySkyCal = new Date(selectedYear, selectedMonth, selectedDay);
@@ -161,13 +316,13 @@ const Logic = (props) => {
         let timeGround = null;
 
         let arrCheck = 0;
-        let arrNum = Math.floor(hour/2);
-        if(hour%2==1){
-            arrCheck = minutes<30 ? arrNum : ++arrNum;
+        let arrNum = Math.floor(hour / 2);
+        if (hour % 2 == 1) {
+            arrCheck = minutes < 30 ? arrNum : ++arrNum;
         }
         //8+5=13-12=1
-        const timeSky = timeSkyCal+arrNum < 10 ? timeSkyCal+arrNum : timeSkyCal+arrNum -10;
-        
+        const timeSky = timeSkyCal + arrNum < 10 ? timeSkyCal + arrNum : timeSkyCal + arrNum - 10;
+
         return sky[timeSky].name;
 
     })
@@ -183,9 +338,9 @@ const Logic = (props) => {
         let timeGround = null;
 
         let arrCheck = 0;
-        let arrNum = Math.floor(hour/2);
-        if(hour%2==1){
-            arrCheck = minutes<30 ? arrNum : ++arrNum;
+        let arrNum = Math.floor(hour / 2);
+        if (hour % 2 == 1) {
+            arrCheck = minutes < 30 ? arrNum : ++arrNum;
         }
 
 
@@ -205,7 +360,7 @@ const Logic = (props) => {
             {returnDaySky(selectedYear, selectedMonth, selectedDay)}
             {returnDayGround(selectedYear, selectedMonth, selectedDay)}
             ?
-            {returnTimeSky(selectedYear, selectedMonth, selectedDay,selectedTime)}
+            {returnTimeSky(selectedYear, selectedMonth, selectedDay, selectedTime)}
             {returnTimeGround(selectedTime)}
         </h1>
     )
