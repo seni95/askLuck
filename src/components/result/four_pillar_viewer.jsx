@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import Logic from '../logic/logic';
 import styles from './four_pillar_viewer.module.css';
-
+import CalculateFamily from '../logic/calculate_family';
 
 const FourPillarViewer = (props) => {
 
@@ -23,6 +23,15 @@ const FourPillarViewer = (props) => {
     const yearSky = logic.returnYearSky(selectedYear);
     const yearGround = logic.returnYearGround(selectedYear);
 
+    const monthSky = logic.returnMonthSky(selectedYear, selectedMonth, selectedDay);
+    const monthGround = logic.returnMonthGround(selectedMonth, selectedDay);
+
+    const daySky = logic.returnDaySky(selectedYear, selectedMonth, selectedDay);
+    const dayGround = logic.returnDayGround(selectedYear, selectedMonth, selectedDay);
+
+    const timeSky = logic.returnTimeSky(selectedYear, selectedMonth, selectedDay, selectedTime);
+    const timeGround = logic.returnTimeGround(selectedTime);
+
 
 
 
@@ -33,39 +42,51 @@ const FourPillarViewer = (props) => {
 
             <div className={styles.pillars}>
                 <span>년</span>
+                <span><CalculateFamily daySky = {daySky} sky={yearSky}></CalculateFamily></span>
                 <span className={`${styles.element} ${styles.sky}`}>
                     {yearSky.code}
                 </span>
                 <span className={`${styles.element} ${styles.ground}`}>
                     {yearGround.code}
                 </span>
+                <span><CalculateFamily daySky = {daySky} ground={yearGround}></CalculateFamily></span>
             </div>
             <div className={styles.pillars}>
                 <span>월</span>
+                <span><CalculateFamily daySky = {daySky} sky={monthSky}></CalculateFamily></span>
                 <span className={`${styles.element} ${styles.sky}`}>
-                    {logic.returnMonthSky(selectedYear, selectedMonth, selectedDay)}
+                    {monthSky.code}
                 </span>
                 <span className={`${styles.element} ${styles.ground}`}>
-                    {logic.returnMonthGround(selectedMonth, selectedDay)}
+                    {monthGround.code}
                 </span>
+                <span><CalculateFamily daySky = {daySky} ground={monthGround}></CalculateFamily></span>
+
             </div>
             <div className={styles.pillars}>
                 <span>일</span>
+                <span>아신</span>
                 <span className={`${styles.element} ${styles.sky}`}>
-                    {logic.returnDaySky(selectedYear, selectedMonth, selectedDay)}
+                    {daySky.code}
                 </span>
                 <span className={`${styles.element} ${styles.ground}`}>
-                    {logic.returnDayGround(selectedYear, selectedMonth, selectedDay)}
+                    {dayGround.code}
                 </span>
+                <span><CalculateFamily daySky = {daySky} ground={dayGround}></CalculateFamily></span>
+
             </div>
             <div className={styles.pillars}>
                 <span>시</span>
+                <span><CalculateFamily daySky = {daySky} sky={timeSky}></CalculateFamily></span>
+
                 <span className={`${styles.element} ${styles.sky}`}>
-                    {logic.returnTimeSky(selectedYear, selectedMonth, selectedDay, selectedTime)}
+                    {timeSky.code}
                 </span>
                 <span className={`${styles.element} ${styles.ground}`}>
-                    {logic.returnTimeGround(selectedTime)}
+                    {timeGround.code}
                 </span>
+                <span><CalculateFamily daySky = {daySky} ground={timeGround}></CalculateFamily></span>
+
             </div>
 
         </div>

@@ -138,7 +138,7 @@ class Logic{
                     break;
             }
             
-            return this.data.sky[monthSky].code;
+            return this.data.sky[monthSky];
     
         }
     
@@ -224,7 +224,7 @@ class Logic{
             }
             console.log(monthGround);
     
-            return this.data.ground[monthGround].code;
+            return this.data.ground[monthGround];
         }
     
     
@@ -236,7 +236,7 @@ class Logic{
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
             const daySky = diffDateResult % 10;
     
-            return this.data.sky[daySky].code;
+            return this.data.sky[daySky];
         }
     
 
@@ -247,7 +247,7 @@ class Logic{
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
             const dayGround = diffDateResult % 12;
     
-            return this.data.ground[dayGround].code;
+            return this.data.ground[dayGround];
         }
 
         returnTimeSky = (selectedYear, selectedMonth, selectedDay, selectedTime) => {
@@ -304,7 +304,7 @@ class Logic{
             //8+5=13-12=1
             const timeSky = timeSkyCal + arrCheck < 10 ? timeSkyCal + arrCheck : timeSkyCal + arrCheck - 10;
     
-            return this.data.sky[timeSky].code;
+            return this.data.sky[timeSky];
     
         }
     
@@ -328,7 +328,7 @@ class Logic{
             }
     
     
-            return this.data.ground[arrCheck].code;
+            return this.data.ground[arrCheck];
         }
 }
 
