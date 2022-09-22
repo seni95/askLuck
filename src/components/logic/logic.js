@@ -1,4 +1,4 @@
-import Data from './data/data'
+import Data from '../data/data'
 
 
 class Logic{
@@ -15,21 +15,21 @@ class Logic{
             const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;
             
     
-            return data.sky[yearSky].code;
+            return this.data.sky[yearSky];
         }
 
         returnYearGround = (selectedYear) => {
             const yearGroundCal = selectedYear % 12;
             const yearGround = yearGroundCal + 8 < 12 ? yearGroundCal + 8 : yearGroundCal + 8 - 12;
-            return data.ground[yearGround].code;
+            return this.data.ground[yearGround];
         }
     
-        returnMonthSky = (selectedYear, selectedMonth) => {
+        returnMonthSky = (selectedYear, selectedMonth,selectedDay) => {
             const yearSkyCal = selectedYear % 10;
             const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;
             let monthSkyCal = null;
-            console.log(data.sky[yearSky].name);
-            switch (data.sky[yearSky].name) {
+            console.log(this.data.sky[yearSky].name);
+            switch (this.data.sky[yearSky].name) {
                 case "갑":
                 case "기":
                     monthSkyCal = 2;
@@ -138,7 +138,7 @@ class Logic{
                     break;
             }
             
-            return data.sky[monthSky].code;
+            return this.data.sky[monthSky].code;
     
         }
     
@@ -224,7 +224,7 @@ class Logic{
             }
             console.log(monthGround);
     
-            return data.ground[monthGround].code;
+            return this.data.ground[monthGround].code;
         }
     
     
@@ -236,7 +236,7 @@ class Logic{
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
             const daySky = diffDateResult % 10;
     
-            return data.sky[daySky].code;
+            return this.data.sky[daySky].code;
         }
     
 
@@ -247,7 +247,7 @@ class Logic{
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
             const dayGround = diffDateResult % 12;
     
-            return data.ground[dayGround].code;
+            return this.data.ground[dayGround].code;
         }
 
         returnTimeSky = (selectedYear, selectedMonth, selectedDay, selectedTime) => {
@@ -257,7 +257,7 @@ class Logic{
             const diffDate = daySkyCal.getTime() - standard.getTime();
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
             const daySky = diffDateResult % 10;
-            const toCalculateTimeSky = data.sky[daySky].name;
+            const toCalculateTimeSky = this.data.sky[daySky].name;
     
             let timeSkyCal = null;
     
@@ -304,7 +304,7 @@ class Logic{
             //8+5=13-12=1
             const timeSky = timeSkyCal + arrCheck < 10 ? timeSkyCal + arrCheck : timeSkyCal + arrCheck - 10;
     
-            return data.sky[timeSky].code;
+            return this.data.sky[timeSky].code;
     
         }
     
@@ -328,7 +328,7 @@ class Logic{
             }
     
     
-            return data.ground[arrCheck].code;
+            return this.data.ground[arrCheck].code;
         }
 }
 

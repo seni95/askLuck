@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Logic from './components/logic';
 import InputBirthday from './components/input_birthday/input_birthday';
 import { useState } from 'react';
+import FourPillarViewer from './components/result/four_pillar_viewer';
 
 function App() {
 
@@ -34,12 +34,13 @@ function App() {
   return (
     <div className="App">
     <InputBirthday onAdd={onAdd}></InputBirthday>
-    <Logic 
-    selectedYear = {selectedYear}
-    selectedMonth={selectedMonth}
-    selectedDay ={selectedDay}
-    selectedTime={selectedTime}
-    ></Logic>
+    <FourPillarViewer
+     selectedYear = {selectedYear}
+     selectedMonth={selectedMonth}
+     selectedDay ={selectedDay}
+     selectedTime={selectedTime}
+    ></FourPillarViewer>
+  
     {console.log()}
     </div>
   );

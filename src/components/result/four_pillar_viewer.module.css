@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+}
+.pillars{
+    display: flex;
+    flex-direction: column;
+}
+
+.element{
+    border:1px solid black;
+    font-size:3rem;
+}
+
+*{
+}
+
+.green{
+    color:blue;
+    background-color: chartreuse;
+}
+
+.blue{
+    background-color: gold;
+}
