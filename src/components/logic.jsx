@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import showFortune from './show_fortune/show_fortune';
+
 
 const Logic = (props) => {
 
@@ -384,10 +386,7 @@ const Logic = (props) => {
             {returnTimeSky(selectedYear, selectedMonth, selectedDay, selectedTime)}
             {returnTimeGround(selectedTime)}
             /
-            {console.log(props.selectedYear,props.selectedMonth,props.selectedDay,props.selectedTime)}
-            {console.log(selectedYear,selectedMonth,selectedTime,selectedDay+"??")}
             /
-            {console.log(typeof(selectedYear))}
         </h1>
     )
 }
