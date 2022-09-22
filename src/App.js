@@ -34,10 +34,11 @@ function App() {
   return (
     <div className="App">
     <InputBirthday onAdd={onAdd}></InputBirthday>
-    <Logic selectedTime={selectedTime}
+    <Logic 
     selectedYear = {selectedYear}
     selectedMonth={selectedMonth}
     selectedDay ={selectedDay}
+    selectedTime={selectedTime}
     ></Logic>
     {console.log()}
     </div>
