@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import showFortune from './show_fortune/show_fortune';
 
 
 const Logic = (props) => {
