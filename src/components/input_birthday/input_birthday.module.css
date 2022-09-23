@@ -5,21 +5,37 @@
     position: relative;
     background: #f9f9f9;
     margin: 30px auto;
-    min-height: 400px;
-    padding-left: 50px;
-    padding-right: 50px;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
     font-size: 2rem;
+    padding:30px;
+    padding-top:10px;
 }
+
+@media(max-width:700px){
+    .container{
+      font-size: 1rem;
+    }
+
+    input,select{
+        /* color:white; */
+        font-size: 0.5rem;
+    }
+
+    h2{
+    font-size: 0.5rem;
+    }
+  }
+  
 
 h2{
     display: inline-block;
     text-align: center;
+    font-size: 10rem;
 }
 
 .container *{
-    padding-top:10px;
+    padding-top:20px;
 }
 
 .genderSelect, .selectAmPm ,.dataSelect,.timeInput,.toSubmit{
@@ -38,8 +54,7 @@ h2{
 }
 
 input,select{
-    width:100px;
-    height:50px;
+   
     background-color: #e7e9eb;
     border-radius: 5px;
     border:0.8px solid rgb(129, 122, 122);
@@ -50,7 +65,6 @@ input,select{
 input[type="button"]{
     display: block;
     position: relative;
-    width: 50px;
     padding: 0;
     margin: 10px 10px 10px 0;
     font-weight: 600;
@@ -61,7 +75,6 @@ input[type="button"]{
     cursor: pointer;
     border:none;
     background-color: #d1d8e0;
-    font-size: 1.5rem;
 
 }
 
@@ -72,7 +85,5 @@ input[type="button"].checked, button.checked{
 
 
 button{
- width: 100px;
- height:55px;
  border:1px solid gray;
 }
