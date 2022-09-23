@@ -4,6 +4,7 @@ import styles from './input_birthday.module.css'
 
 const InputBirthday = (props) => {
 
+
   const today = {
     year: new Date().getFullYear(),
     month: new Date().getMonth() + 1,
@@ -14,7 +15,7 @@ const InputBirthday = (props) => {
   const [selectedMonth, setSelectedMonth] = useState(today.month);
   const [selectedDay, setSelectedDay] = useState(today.date);
   const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate();
-
+  const [selectedGender,setSelectedGender] =useState();
 
   const inputGender = useRef();
   const inputYear = useRef();
@@ -24,6 +25,7 @@ const InputBirthday = (props) => {
   const inputHour = useRef();
   const inputMinutes = useRef();
 
+  
 
   const yearControl = useCallback(() => {
     let yearArr = [];
@@ -116,9 +118,14 @@ const InputBirthday = (props) => {
 
     const checkAmPm = inputAmPm.current.value;
     let tranMinutes = inputMinutes.current.value;
-    let transHour = inputHour.current.value
+    let transHour = inputHour.current.value;
+    //처음 사용자로부터 시간의 숫자값을 받아왔을 때, string으로 받아진다.
+    //넘버로 변환시켜주고 (혹시 사용자가 0을 입력했을 시에 0을 빼주고 자연수값만을 받기 위함)
+    //다시 스트링으로 변환시켜서 넘겨줘야한다.
     let checkHour = Number(transHour);
     const checkMinutes = Number(tranMinutes);
+
+
     let calHour = "";
     if (checkAmPm == "오전") {
       calHour = "0" + checkHour.toString();
@@ -149,10 +156,12 @@ const InputBirthday = (props) => {
   const selectWoman = () => {
     inputGender.current.value = "여자"
     console.log(inputGender.current.value);
+    setSelectedGender(inputGender.current.value);
   }
   const selectMan = () => {
     inputGender.current.value = "남자"
     console.log(inputGender.current.value);
+    setSelectedGender(inputGender.current.value);
 
   }
 
@@ -174,9 +183,10 @@ const InputBirthday = (props) => {
         <div className={styles.genderSelect} ref={inputGender}>
           <span>성별</span>
           <input type="button" onClick={selectMan}
-            value="남자" />
+            value="남자" className={selectedGender=="남자"?styles.checked:""} 
+            />
           <input type="button" onClick={selectWoman}
-            value="여자" />
+            value="여자" className={selectedGender=="여자"?styles.checked:""}  />
         </div>
         <div className={styles.dateSelect}>
           <h2>
