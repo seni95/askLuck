@@ -25,4 +25,5 @@ html, body{
     max-width:500px;
     position: relative;
     box-shadow: 0px 35px 100px -35px rgba(0,0,0,0.4);
+    padding-bottom: 30px;
   }

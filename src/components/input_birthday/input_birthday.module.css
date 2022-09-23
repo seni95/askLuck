@@ -10,7 +10,7 @@
     padding-right: 50px;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
-
+    font-size: 2rem;
 }
 
 h2{
@@ -43,6 +43,8 @@ input,select{
     background-color: #e7e9eb;
     border-radius: 5px;
     border:0.8px solid rgb(129, 122, 122);
+    font-size: 1.5rem;
+
 }
 
 input[type="button"]{
@@ -59,13 +61,13 @@ input[type="button"]{
     cursor: pointer;
     border:none;
     background-color: #d1d8e0;
-    box-shadow: 0px 5px 2px 1px #5f6770;
+    font-size: 1.5rem;
+
 }
 
 input[type="button"].checked, button.checked{
-    margin-top: 15px;
-  margin-bottom: 5px;
-  box-shadow: 0px 0px 0px 0px #007144;
+    border:3px solid gray;
+
 }
 
 

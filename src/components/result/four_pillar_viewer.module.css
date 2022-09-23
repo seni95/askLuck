@@ -6,9 +6,8 @@
     justify-content: center;
     position: relative;
     background: #f9f9f9;
-    margin: 30px auto;
-    min-height: 400px;
-    min-width: 300px;
+    margin: auto;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
 
@@ -18,12 +17,18 @@
 .pillars{
     display: flex;
     flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.pillars *{
+
+    
 }
 
 .element{
-    border:1px solid black;
     font-size:3rem;
     font-family: 'Nanum Gothic', sans-serif;
+    font-size: 4rem;
 }
 
 *{
