@@ -16,6 +16,7 @@ const InputBirthday = (props) => {
   const [selectedDay, setSelectedDay] = useState(today.date);
   const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate();
   const [selectedGender,setSelectedGender] =useState();
+  const [selectedAmPm,setSelectedAmPm] =useState();
 
   const inputGender = useRef();
   const inputYear = useRef();
@@ -168,11 +169,13 @@ const InputBirthday = (props) => {
   const selectAm = () => {
     inputAmPm.current.value = "오전"
     console.log(inputAmPm.current.value);
+    setSelectedAmPm(inputAmPm.current.value);
+    
   }
   const selectPm = () => {
     inputAmPm.current.value = "오후"
     console.log(inputAmPm.current.value);
-
+    setSelectedAmPm(inputAmPm.current.value);
   }
 
 
@@ -181,7 +184,7 @@ const InputBirthday = (props) => {
 
       <form action="" onSubmit={onSubmit}>
         <div className={styles.genderSelect} ref={inputGender}>
-          <span>성별</span>
+          <h2>성별</h2>
           <input type="button" onClick={selectMan}
             value="남자" className={selectedGender=="남자"?styles.checked:""} 
             />
@@ -203,9 +206,13 @@ const InputBirthday = (props) => {
 
           <div className={styles.selectAmPm} ref={inputAmPm}>
             <input type="button" onClick={selectAm}
-              value="오전" />
+              value="오전" 
+              className={selectedAmPm=="오전"?styles.checked:""}
+              />
             <input type="button" onClick={selectPm}
-              value="오후" />
+              value="오후" 
+              className={selectedAmPm=="오후"?styles.checked:""}
+              />
           </div>
         
         <div className={styles.timeInput}>
