@@ -6,7 +6,8 @@
     background: #f9f9f9;
     margin: 30px auto;
     min-height: 400px;
-    width: 450px;
+    padding-left: 50px;
+    padding-right: 50px;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
 
