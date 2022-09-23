@@ -25,7 +25,7 @@ class Data{
             { name: "신", symbol: "금", sign: "양", key: 19 ,code:"申"},
             { name: "유", symbol: "금", sign: "음", key: 20 ,code:"酉"},
             { name: "술", symbol: "토", sign: "양", key: 21 ,code:"戌"},
-            { name: "해", symbol: "수", sign: "음", key: 22 ,code:"亥"},
+            { name: "해", symbol: "수", sign: "양", key: 22 ,code:"亥"},
         ]
     
 
