@@ -9,10 +9,22 @@ h2{
     display: inline-block;
 }
 
-.genderSelect{
+.genderSelect, .selectAmPm ,.dataSelect,.timeInput,.toSubmit{
+    display: flex;
+    align-items: center;
+
+}
+.genderSelect span,.genderSelect input,.dataSelect h2,.selectAmPm input,.timeInput input{
     flex-grow:1;
     
 }
-.dataSelect h2{
-    flex-grow:1;
+
+.toSubmit{
+    justify-content: center;
+    
+}
+
+input[type="button"], button{
+    cursor: pointer;
+    
 }
