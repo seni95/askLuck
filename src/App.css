@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
+
+  @font-face {
+    font-family: 'BMHANNAAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+html, body{
+  margin: 0;
+  background: #f1f1f1;
+  font-family: 'BMHANNAAir';
+
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App{
+    display: flex;
+    margin: auto;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    max-width:500px;
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+    box-shadow: 0px 35px 100px -35px rgba(0,0,0,0.4);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

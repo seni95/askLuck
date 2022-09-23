@@ -40,8 +40,6 @@ function App() {
      selectedDay ={selectedDay}
      selectedTime={selectedTime}
     ></FourPillarViewer>
-  
-    {console.log()}
     </div>
   );
 }

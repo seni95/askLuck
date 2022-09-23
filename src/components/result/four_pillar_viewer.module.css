@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 .container{
     display: flex;
     flex-direction: row-reverse;
@@ -12,9 +14,11 @@
 .element{
     border:1px solid black;
     font-size:3rem;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 *{
+    /* color:pink; */
 }
 
 .green{
@@ -24,4 +28,8 @@
 
 .blue{
     background-color: gold;
+}
+
+span{
+    text-align: center;
 }
