@@ -184,7 +184,6 @@ const InputBirthday = (props) => {
 
       <form action="" onSubmit={onSubmit}>
         <div className={styles.genderSelect} ref={inputGender}>
-          <h2>성별</h2>
           <input type="button" onClick={selectMan}
             value="남자" className={selectedGender=="남자"?styles.checked:""} 
             />
@@ -192,15 +191,15 @@ const InputBirthday = (props) => {
             value="여자" className={selectedGender=="여자"?styles.checked:""}  />
         </div>
         <div className={styles.dateSelect}>
-          <h2>
+          <span>
             {yearControl()}년
-          </h2>
-          <h2>
+          </span>
+          <span>
             {monthControl()}월
-          </h2>
-          <h2>
+          </span>
+          <span>
             {dayControl()}일
-          </h2>
+          </span>
           </div>
 
 
