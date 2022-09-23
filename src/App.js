@@ -3,6 +3,7 @@ import './App.css';
 import InputBirthday from './components/input_birthday/input_birthday';
 import { useState } from 'react';
 import FourPillarViewer from './components/result/four_pillar_viewer';
+import Header from './components/header/header';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+    <Header></Header>
     <InputBirthday onAdd={onAdd}></InputBirthday>
     <FourPillarViewer
      selectedYear = {selectedYear}

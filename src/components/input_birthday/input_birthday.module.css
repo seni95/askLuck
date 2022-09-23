@@ -2,7 +2,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+    position: relative;
+    background: #f9f9f9;
+    margin: 30px auto;
+    min-height: 400px;
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
+
 }
 
 h2{
