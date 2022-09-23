@@ -115,8 +115,10 @@ const InputBirthday = (props) => {
     event.preventDefault();
 
     const checkAmPm = inputAmPm.current.value;
-    let checkHour = inputHour.current.value;
-    const checkMinutes = inputMinutes.current.value;
+    let tranMinutes = inputMinutes.current.value;
+    let transHour = inputHour.current.value
+    let checkHour = Number(transHour);
+    const checkMinutes = Number(tranMinutes);
     let calHour = "";
     if (checkAmPm == "오전") {
       calHour = "0" + checkHour.toString();
