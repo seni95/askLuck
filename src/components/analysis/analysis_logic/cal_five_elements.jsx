@@ -82,7 +82,7 @@ const CalFiveElements = (props) => {
             console.log(fiveElements[j].color);
 
                 calResult.push(
-                   <span key={forkey} id={fiveElements[j].color}>??</span>
+                   <span className={styles.showElements} key={forkey} id={fiveElements[j].color}></span>
                 )
 
                 forkey++;

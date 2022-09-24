@@ -4,18 +4,16 @@
     border:none;
 }
 
-table{
-    border-collapse: collapse;
-}
-
-td{
-    width:30px;
-    height:20px;
-}
 .result{
     display: flex;
     flex-direction: row;
 }
 p{
     font-size: 1rem;
+}
+
+.showElements{
+    display: inline-block;
+    width:30px;
+    height:20px;
 }
