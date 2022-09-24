@@ -24,7 +24,7 @@ const CalFiveElements = (props) => {
         color:'white'
     };
 
-    let fiveElements = [tree,fire,water,earth,gold];
+    let fiveElements = [tree,fire,earth,gold,water];
 
     let toCal = [
         props.yearSky,
@@ -75,31 +75,43 @@ const CalFiveElements = (props) => {
 
     const returnFiveElementsTable = ()=>{
         let calResult = [];
+        let forkey=0;
         for(let j=0; j<fiveElements.length; j++){
+            console.log(fiveElements[j])
             for(let i=0;i<fiveElements[j].count;i++){
+            console.log(fiveElements[j].color);
+
                 calResult.push(
-                    <td key={i} id={fiveElements[j].color}></td>
+                   <span key={forkey} id={fiveElements[j].color}>??</span>
                 )
+
+                forkey++;
             }
         }
         
 
+        tree.count=0;
+        fire.count=0;
+        earth.count=0;
+        gold.count=0;
+        water.count=0;
+
+   
+
         return(
-            <tr>
+            <div>
                 {calResult}
-            </tr>
+            </div>
         )
     }
+
 
 
   return (
 <div>
 {returnFiveElementsResult()}
-<table className={styles.table}>
-<thead>
+
    {returnFiveElementsTable()}
-</thead>
-</table>
 </div>
     )
 }
