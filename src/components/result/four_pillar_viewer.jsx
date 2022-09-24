@@ -43,10 +43,12 @@ const FourPillarViewer = (props) => {
             <div className={styles.pillars}>
                 <span>년</span>
                 <span><CalculateFamily daySky = {daySky} sky={yearSky}></CalculateFamily></span>
-                <span className={`${styles.element} ${styles.sky}`}>
+                <span className={`${styles.element} ${styles.sky}`}
+                id={yearSky.color}>
                     {yearSky.code}
                 </span>
-                <span className={`${styles.element} ${styles.ground}`}>
+                <span className={`${styles.element} ${styles.ground}`}
+                id={yearGround.color}>
                     {yearGround.code}
                 </span>
                 <span><CalculateFamily daySky = {daySky} ground={yearGround}></CalculateFamily></span>
@@ -54,10 +56,12 @@ const FourPillarViewer = (props) => {
             <div className={styles.pillars}>
                 <span>월</span>
                 <span><CalculateFamily daySky = {daySky} sky={monthSky}></CalculateFamily></span>
-                <span className={`${styles.element} ${styles.sky}`}>
+                <span className={`${styles.element} ${styles.sky}`}
+                id={monthSky.color}>
                     {monthSky.code}
                 </span>
-                <span className={`${styles.element} ${styles.ground}`}>
+                <span className={`${styles.element} ${styles.ground}`}
+                id={monthGround.color}>
                     {monthGround.code}
                 </span>
                 <span><CalculateFamily daySky = {daySky} ground={monthGround}></CalculateFamily></span>
@@ -66,10 +70,12 @@ const FourPillarViewer = (props) => {
             <div className={styles.pillars}>
                 <span>일</span>
                 <span>아신</span>
-                <span className={`${styles.element} ${styles.sky}`}>
+                <span className={`${styles.element} ${styles.sky}`}
+                id={daySky.color}>
                     {daySky.code}
                 </span>
-                <span className={`${styles.element} ${styles.ground}`}>
+                <span className={`${styles.element} ${styles.ground}`}
+                id={dayGround.color}>
                     {dayGround.code}
                 </span>
                 <span><CalculateFamily daySky = {daySky} ground={dayGround}></CalculateFamily></span>
@@ -79,10 +85,13 @@ const FourPillarViewer = (props) => {
                 <span>시</span>
                 <span><CalculateFamily daySky = {daySky} sky={timeSky}></CalculateFamily></span>
 
-                <span className={`${styles.element} ${styles.sky}`}>
+                <span className={`${styles.element} ${styles.sky}`}
+                id={timeSky.color}>
                     {timeSky.code}
                 </span>
-                <span className={`${styles.element} ${styles.ground}`}>
+                <span className={`${styles.element} ${styles.ground}`}
+                id={timeGround.color}
+                >
                     {timeGround.code}
                 </span>
                 <span><CalculateFamily daySky = {daySky} ground={timeGround}></CalculateFamily></span>

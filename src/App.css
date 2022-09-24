@@ -35,3 +35,19 @@ html, body{
     }
   }
   
+  #black{
+    background-color: gray;
+  }
+
+  #white{
+    background-color: gainsboro;
+  }
+  #red{
+    background-color: tomato;
+  }
+  #yellow{
+    background-color: goldenrod;
+  }
+  #green{
+    background-color: darkolivegreen;
+  }
