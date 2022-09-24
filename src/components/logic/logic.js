@@ -298,6 +298,11 @@ class Logic{
             let arrNum = Math.floor(hour / 2);
             if (hour % 2 == 1) {
                 arrCheck = minutes < 30 ? arrNum : ++arrNum;
+
+                //arrCheck 값이 12가 되어서 배열을 넘어가는 경우가 발생하지 않도록
+                if(arrCheck>11){
+                    arrCheck=0;
+                }
             }else{
                 arrCheck = arrNum;
             }
@@ -323,6 +328,12 @@ class Logic{
             let arrNum = Math.floor(hour / 2);
             if (hour % 2 == 1) {
                 arrCheck = minutes < 30 ? arrNum : ++arrNum;
+
+                //arrCheck 값이 12가 되어서 배열을 넘어가는 경우가 발생하지 않도록
+                if(arrCheck>11){
+                    arrCheck=0;
+                }
+               
             } else{
                 arrCheck=arrNum;
             }

@@ -31,7 +31,6 @@
 h2{
     display: inline-block;
     text-align: center;
-    font-size: 10rem;
 }
 
 .container *{
@@ -74,7 +73,8 @@ input[type="button"]{
     transition: all 0.2s ;
     cursor: pointer;
     border:none;
-    background-color: #d1d8e0;
+    background-color:lightgrey;
+    color: black;
 
 }
 

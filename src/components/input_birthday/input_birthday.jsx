@@ -125,15 +125,33 @@ const InputBirthday = (props) => {
     //다시 스트링으로 변환시켜서 넘겨줘야한다.
     let checkHour = Number(transHour);
     const checkMinutes = Number(tranMinutes);
+    const checkGender = inputGender.current.value;
+
+    if(checkGender==undefined){
+      return alert('남성인가요? 여성인가요?');
+    }
+
+    if(checkAmPm==undefined){
+      return alert('오전인가요? 오후인가요?');
+    }
 
 
     let calHour = "";
     if (checkAmPm == "오전") {
-      calHour = "0" + checkHour.toString();
-    } else {
+      if(checkHour<10){
+        calHour = "0" + checkHour.toString();
+      //09,08 시스템으로 만듦
+      }else{
+        calHour = checkHour.toString();
+      }
+
+    } else if(checkAmPm == "오후"){
       checkHour += 12
+      //오후일때만 12를 더해서 24시간 시스템으로 만듦
       calHour = checkHour.toString();
-    }
+    } 
+
+
     let calMin = "";
     if (checkMinutes < 10) {
       calMin = "0" + checkMinutes.toString();

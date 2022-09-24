@@ -5,6 +5,8 @@ const Header = () => {
   return (
     <header>
         <h1>ASKLUCK</h1>
+        <nav>
+        </nav>
     </header>
   )
 }

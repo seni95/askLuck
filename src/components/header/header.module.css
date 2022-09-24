@@ -1,16 +1,23 @@
 header{
-  background-color: #B7C4CF;
+  background-color:lightslategray;
   /* background: linear-gradient(0deg, rgba(137,138,166,1) 0%, rgba(201,187,207,1) 100%); */
+  color:white;
     display: flex;
+    border-radius: 10px;
   /* box-shadow: 0px 10px 11px -3px rgba(0,0,0,0.75); */
   /* color:white; */
+  box-shadow: 0 4px 4px -4px black;
+  height:80px;
+  align-items: flex-end;
+  padding-left:20px;
 }
 
 
 header *{
-    flex-grow: 1;
+    /* flex-grow: 1; */
+
 }
 
 h1{
-text-align: center;    
+  font-size: 1.3rem;
 }
