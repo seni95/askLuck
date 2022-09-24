@@ -4,6 +4,7 @@ import InputBirthday from './components/input_birthday/input_birthday';
 import { useState } from 'react';
 import FourPillarViewer from './components/result/four_pillar_viewer';
 import Header from './components/header/header';
+import Analysis from './components/analysis/analysis';
 
 function App() {
 
@@ -28,7 +29,6 @@ function App() {
     setSelectedMonth(month-1);
     setSelectedDay(day);
     setSelectedTime(time);
-    console.log('제대로 받았니?' + year,month,day,time);
 
   }
 
@@ -42,6 +42,12 @@ function App() {
      selectedDay ={selectedDay}
      selectedTime={selectedTime}
     ></FourPillarViewer>
+    <Analysis
+    selectedYear = {selectedYear}
+    selectedMonth={selectedMonth}
+    selectedDay ={selectedDay}
+    selectedTime={selectedTime}
+    ></Analysis>
     </div>
   );
 }
