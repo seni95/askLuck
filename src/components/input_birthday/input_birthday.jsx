@@ -171,6 +171,8 @@ const InputBirthday = (props) => {
     console.log(inputGender.current.value + "젠더 ");
     time && props.onAdd(year, month, day, time, gender);
 
+    window.scrollTo(0,0);
+
   }
 
   const selectWoman = () => {

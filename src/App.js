@@ -15,11 +15,11 @@ function App() {
   }
 
 
-  const [selectedYear , setSelectedYear] = useState();
-  const [selectedMonth , setSelectedMonth] = useState();
-  const [selectedDay , setSelectedDay] = useState();
-  const [selectedTime , setSelectedTime] = useState();
-  const [selectedGender, setSelectedGender] = useState();
+  const [selectedYear , setSelectedYear] = useState(today.year);
+  const [selectedMonth , setSelectedMonth] = useState(today.month);
+  const [selectedDay , setSelectedDay] = useState(today.date);
+  const [selectedTime , setSelectedTime] = useState("09:50");
+  const [selectedGender, setSelectedGender] = useState("남자");
 
   const onAdd = (year,month,day,time,gender)=>{
     setSelectedYear(year);
@@ -37,9 +37,9 @@ function App() {
     <div className="App">
     <Header></Header>
 
-    {
+    {/* {
 selectedYear&& (
-<>
+<> */}
 
 
 <FourPillarViewer
@@ -57,9 +57,9 @@ selectedTime={selectedTime}
 selectedGender={selectedGender}
 ></Analysis>
 
-</>
+{/* </>
 )
-    }
+    } */}
 
     <InputBirthday onAdd={onAdd}></InputBirthday>
 

@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    flex-flow: row-reverse wrap;
+    /* flex-direction: ; */
+}
+.pillar{
+display: flex;
+flex-direction: column;
+}
+
