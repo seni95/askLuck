@@ -63,11 +63,11 @@ const CalFiveElements = (props) => {
         }
         return (
             <div className={styles.result}>
-            <p>목 : {tree.count}</p>  
-            <p>화 : {fire.count}</p>  
-            <p>토 : {earth.count}</p>  
-            <p>금 : {gold.count}</p>  
-            <p>수 : {water.count} </p> 
+            <p>목: {tree.count}</p>  
+            <p>화: {fire.count}</p>  
+            <p>토: {earth.count}</p>  
+            <p>금: {gold.count}</p>  
+            <p>수: {water.count} </p> 
             </div>
         )
 
@@ -108,10 +108,12 @@ const CalFiveElements = (props) => {
 
 
   return (
-<div>
-{returnFiveElementsResult()}
-
-   {returnFiveElementsTable()}
+<div className={styles.container}>
+    <div className={styles.textResult}>
+{returnFiveElementsResult()}</div>
+<div className={styles.tableResult}>
+{returnFiveElementsTable()}
+</div>
 </div>
     )
 }

@@ -11,10 +11,10 @@ const InputBirthday = (props) => {
     date: new Date().getDate()
   }
 
-  const [selectedYear, setSelectedYear] = useState(today.year);
-  const [selectedMonth, setSelectedMonth] = useState(today.month);
-  const [selectedDay, setSelectedDay] = useState(today.date);
-  const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate();
+  const [selectedYear, setSelectedYear] = useState();
+  const [selectedMonth, setSelectedMonth] = useState();
+  const [selectedDay, setSelectedDay] = useState();
+  const dateTotalCount = new Date(2022, 8, 0).getDate();
   const [selectedGender,setSelectedGender] =useState();
   const [selectedAmPm,setSelectedAmPm] =useState();
 
@@ -166,9 +166,10 @@ const InputBirthday = (props) => {
     const day = inputDay.current.value;
     const month = inputMonth.current.value;
     const year = inputYear.current.value;
+    const gender = inputGender.current.value;
 
     console.log(inputGender.current.value + "젠더 ");
-    time && props.onAdd(year, month, day, time);
+    time && props.onAdd(year, month, day, time, gender);
 
   }
 

@@ -7,6 +7,7 @@
     position: relative;
     background: #f9f9f9;
     margin: auto;
+    margin-top:50px;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
@@ -43,7 +44,9 @@
 .blue{
     background-color: gold;
 }
-
+.red{
+    
+}
 span{
     text-align: center;
 }

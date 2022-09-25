@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './analysis.module.css'
 import CalFiveElements from './analysis_logic/cal_five_elements';
+import CalculateDecades from './calculate_decades/calculate_decades';
 import Logic from '../logic/logic';
+
 
 const Analysis = (props) => {
 
@@ -12,7 +14,7 @@ const Analysis = (props) => {
     const selectedDay = props.selectedDay;
     // const selectedTime = "09:50"
     const selectedTime = props.selectedTime;
-
+    const selectedGender = props.selectedGender;
     // const show = parseInt(props.selectedMonth);
 
     // const selectedYear = 2022;
@@ -46,6 +48,18 @@ const Analysis = (props) => {
             timeSky={timeSky}
             timeGround={timeGround}
         ></CalFiveElements>
+
+        <CalculateDecades
+         yearSky={yearSky}
+         yearGround={yearGround}
+         monthSky={monthSky}
+         monthGround={monthGround}
+         daySky={daySky}
+         dayGround={dayGround}
+         timeSky={timeSky}
+         timeGround={timeGround}
+         selectedGender={selectedGender}
+        ></CalculateDecades>
     </div>
   )
 }

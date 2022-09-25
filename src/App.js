@@ -15,13 +15,13 @@ function App() {
   }
 
 
-  const [selectedYear , setSelectedYear] = useState(today.year);
-  const [selectedMonth , setSelectedMonth] = useState(today.month-1);
-  const [selectedDay , setSelectedDay] = useState(today.date);
-  const [selectedTime , setSelectedTime] = useState("00:00");
+  const [selectedYear , setSelectedYear] = useState();
+  const [selectedMonth , setSelectedMonth] = useState();
+  const [selectedDay , setSelectedDay] = useState();
+  const [selectedTime , setSelectedTime] = useState();
+  const [selectedGender, setSelectedGender] = useState();
 
-
-  const onAdd = (year,month,day,time)=>{
+  const onAdd = (year,month,day,time,gender)=>{
     setSelectedYear(year);
     //그냥 month로 넣었을땐 왜 갑자만 뜬거임..?
     // setSelectedMonth(month);
@@ -29,25 +29,41 @@ function App() {
     setSelectedMonth(month-1);
     setSelectedDay(day);
     setSelectedTime(time);
+    setSelectedGender(gender);
 
   }
 
   return (
     <div className="App">
     <Header></Header>
+
+    {
+selectedYear&& (
+<>
+
+
+<FourPillarViewer
+selectedYear = {selectedYear}
+selectedMonth={selectedMonth}
+selectedDay ={selectedDay}
+selectedTime={selectedTime}
+></FourPillarViewer>
+
+<Analysis
+selectedYear = {selectedYear}
+selectedMonth={selectedMonth}
+selectedDay ={selectedDay}
+selectedTime={selectedTime}
+selectedGender={selectedGender}
+></Analysis>
+
+</>
+)
+    }
+
     <InputBirthday onAdd={onAdd}></InputBirthday>
-    <FourPillarViewer
-     selectedYear = {selectedYear}
-     selectedMonth={selectedMonth}
-     selectedDay ={selectedDay}
-     selectedTime={selectedTime}
-    ></FourPillarViewer>
-    <Analysis
-    selectedYear = {selectedYear}
-    selectedMonth={selectedMonth}
-    selectedDay ={selectedDay}
-    selectedTime={selectedTime}
-    ></Analysis>
+
+
     </div>
   );
 }
