@@ -4,6 +4,7 @@ import styles from './calculate_decades.module.css'
 import GetDecadesNumber from './get_decades_number/get_decades_number'
 import GetDecadesNumberR from './get_decades_number/get_decades_number_r'
 import GetDecadesYear from './get_decades_year/get_decades_year'
+import GetDecadesYearR from './get_decades_year/get_decades_year_r'
 
 const CalculateDecades = (props) => {
 
@@ -112,10 +113,18 @@ const CalculateDecades = (props) => {
 
         for (let i = 0; i < 10; i++) {
             monthGroundIndex = monthGroundIndex > 0 ? --monthGroundIndex : 11;
-            decadesGroundArr.push(
+            decadesGroundArr.push(<>
                 <span key={forkey} className={styles.span} id={data.ground[monthGroundIndex].color}>
                     {data.ground[monthGroundIndex].code}
                 </span>
+                  <GetDecadesYearR
+                  order = {i}
+                  selectedYear ={selectedYear}
+                  selectedMonth={selectedMonth}
+                  selectedDay={selectedDay}
+                  monthIndex={data.ground.findIndex(i => i.name == monthGround.name)}
+                  ></GetDecadesYearR>
+                  </>
             )
             forkey++;
 

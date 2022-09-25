@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './get_decades_year.module.css'
 
-const GetDecadesYear = (props) => {
+const GetDecadesYearR = (props) => {
   
 
         const param = [
@@ -20,14 +20,15 @@ const GetDecadesYear = (props) => {
         const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate();
         
         let toCalResult = 0;
-    
+        
         const decadesNum = ()=>{
             if(selectedMonth==monthIndex){
-                toCalResult = dateTotalCount-selectedDay;
                 //31일에서 26을 뺌. (5)
-                toCalResult+=param[monthIndex];
+                toCalResult=selectedDay-param[monthIndex];
                 }else{
-                toCalResult = param[monthIndex]-selectedDay;               
+                    //8월 6일일 경우, 6+ 지난달 31에서 7월 7일까지의 날짜 (24일)
+                    // 을 뺀 날짜를 더한다.
+                toCalResult = selectedDay+dateTotalCount-param[monthIndex];               
                             }
            let Result = Math.floor(toCalResult/3);
     
@@ -50,4 +51,4 @@ const GetDecadesYear = (props) => {
     }
 
 
-export default GetDecadesYear
+export default GetDecadesYearR

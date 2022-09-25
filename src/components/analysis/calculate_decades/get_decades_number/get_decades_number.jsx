@@ -33,12 +33,6 @@ const GetDecadesNumber = (props) => {
        return Result;
     }
 
-    const returnYear = ()=>{
-       let decadesNumResult = decadesNum();
-
-       return decadesNumResult+parseInt(selectedYear)+order*10;
-    }
-
   return (
     <>
 
