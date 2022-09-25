@@ -3,7 +3,8 @@
     flex-flow: row-reverse;
     /* flex-direction: ; */
     flex-wrap: nowrap;
-    /* overflow: scroll; */
+    width:350px;
+    overflow: scroll;
 
 }
 .pillar{
