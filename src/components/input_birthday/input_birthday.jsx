@@ -166,6 +166,9 @@ const InputBirthday = (props) => {
     const day = inputDay.current.value;
     const month = inputMonth.current.value;
     const year = inputYear.current.value;
+    // const year = 1958;
+    //195~라는 숫자 자체의 문제
+
     const gender = inputGender.current.value;
 
     console.log(inputGender.current.value + "젠더 ");
