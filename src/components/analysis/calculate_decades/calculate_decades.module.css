@@ -3,10 +3,15 @@
     flex-flow: row-reverse;
     /* flex-direction: ; */
     flex-wrap: nowrap;
-    width:350px;
+    width:200px;
     overflow: scroll;
 
 }
+
+/* ::-webkit-scrollbar {
+    display: none;
+    } */
+
 .pillar{
 display: flex;
 flex-direction: column;
