@@ -48,9 +48,12 @@ const Analysis = (props) => {
             timeSky={timeSky}
             timeGround={timeGround}
         ></CalFiveElements>
-
+        <div>대운</div>
         <CalculateDecades
-         yearSky={yearSky}
+        selectedYear={selectedYear}
+        selectedMonth={selectedMonth}
+        selectedDay = {selectedDay}
+        yearSky={yearSky}
          yearGround={yearGround}
          monthSky={monthSky}
          monthGround={monthGround}

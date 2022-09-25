@@ -1,7 +1,10 @@
 .container{
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: row-reverse;
     /* flex-direction: ; */
+    flex-wrap: nowrap;
+    /* overflow: scroll; */
+
 }
 .pillar{
 display: flex;
