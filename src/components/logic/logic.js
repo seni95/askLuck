@@ -58,8 +58,14 @@ class Logic{
     
             const monthSkyCal2 = selectedMonth - 1;
             //2월부터 시작하니까 1을 빼줌. 
-            const monthSkyCal3 = monthSkyCal + monthSkyCal2 < 10 ? monthSkyCal + monthSkyCal2 : monthSkyCal + monthSkyCal2 - 10;
-            
+
+            let monthSkyCal3=0;
+            if(monthSkyCal2==-1){
+            monthSkyCal3=9;
+            }else{
+                monthSkyCal3 = monthSkyCal + monthSkyCal2 < 10 ? monthSkyCal + monthSkyCal2 : monthSkyCal + monthSkyCal2 - 10;
+            }
+
             let monthSky = monthSkyCal3;
     
             switch (monthSkyCal3) {
@@ -234,7 +240,9 @@ class Logic{
             const daySkyCal = new Date(selectedYear, selectedMonth, selectedDay);
             const diffDate = daySkyCal.getTime() - standard.getTime();
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
-            const daySky = diffDateResult % 10;
+            let daySky = diffDateResult % 10;
+            //왜인지 모르지만 1958년에서 나머지값이 소수점으로 나옴...;;
+            daySky = Math.floor(daySky);
     
             return this.data.sky[daySky];
         }
@@ -245,7 +253,8 @@ class Logic{
             const dayGroundCal = new Date(selectedYear, selectedMonth, selectedDay);
             const diffDate = dayGroundCal.getTime() - standard.getTime();
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
-            const dayGround = diffDateResult % 12;
+            let dayGround = diffDateResult % 12;
+            dayGround = Math.floor(dayGround);
     
             return this.data.ground[dayGround];
         }
@@ -256,7 +265,8 @@ class Logic{
             const daySkyCal = new Date(selectedYear, selectedMonth, selectedDay);
             const diffDate = daySkyCal.getTime() - standard.getTime();
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));
-            const daySky = diffDateResult % 10;
+            let daySky = diffDateResult % 10;
+            daySky = Math.floor(daySky);
             const toCalculateTimeSky = this.data.sky[daySky].name;
     
             let timeSkyCal = null;
