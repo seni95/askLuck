@@ -97,6 +97,7 @@ const CalculateDecades = (props) => {
             decadesSkyArr.push(
                 <>
                 <GetDecadesNumberR
+                order={i}
                 selectedYear ={selectedYear}
                 selectedMonth={selectedMonth}
                 selectedDay={selectedDay}
