@@ -15,9 +15,10 @@ const GetDecadesNumber = (props) => {
     const selectedDay = props.selectedDay;
     const monthIndex = props.monthIndex;
     //7월 26일의 경우 인덱스 7번을 반환 (미달)
+    //1월 5일의 경우, 0을 반환(자달)
     const selectedYear = props.selectedYear;
     const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate();
-    
+    //1995년 1월의 전체 날짜를 받음.
     let toCalResult = 0;
 
     const decadesNum = ()=>{

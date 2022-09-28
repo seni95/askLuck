@@ -20,8 +20,8 @@ const FourPillarViewer = (props) => {
     // const selectedDay = 21;
     // const selectedTime = "09:50";
 
-    const yearSky = logic.returnYearSky(selectedYear);
-    const yearGround = logic.returnYearGround(selectedYear);
+    const yearSky = logic.returnYearSky(selectedYear,selectedMonth,selectedDay);
+    const yearGround = logic.returnYearGround(selectedYear,selectedMonth,selectedDay);
 
     const monthSky = logic.returnMonthSky(selectedYear, selectedMonth, selectedDay);
     const monthGround = logic.returnMonthGround(selectedMonth, selectedDay);

@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './get_decades_year.module.css'
+import CalTimesLogic from '../../analysis_logic/cal_times_logic'
 
 const GetDecadesYear = (props) => {
+
   
 
         const param = [

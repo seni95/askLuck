@@ -10,23 +10,68 @@ class Logic{
    
 
 
-        returnYearSky = (selectedYear) => {
+        returnYearSky = (selectedYear,selectedMonth,selectedDay) => {
+           
+            //1월 6일 전까지는 아직 해가 바뀌지 않음.
+
+            if(selectedMonth==0&&selectedDay<6){
+                selectedYear--;
+            }
+
+
+            //따라서 한연도 전의 값을 계산함
+
+            console.log(
+                "따라서 한연도 전의 값을 계산함"
+            );
+            
             const yearSkyCal = selectedYear % 10;
             const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;
             
+           
     
             return this.data.sky[yearSky];
         }
 
-        returnYearGround = (selectedYear) => {
+        returnYearGround = (selectedYear,selectedMonth,selectedDay) => {
+            
+            //1월 6일 전까지는 아직 해가 바뀌지 않음.
+
+            if(selectedMonth==0&&selectedDay<6){
+                selectedYear--;
+            }
+
+
+            //따라서 한연도 전의 값을 계산함
+
+
             const yearGroundCal = selectedYear % 12;
             const yearGround = yearGroundCal + 8 < 12 ? yearGroundCal + 8 : yearGroundCal + 8 - 12;
             return this.data.ground[yearGround];
         }
     
         returnMonthSky = (selectedYear, selectedMonth,selectedDay) => {
+
+            //1월 초에는 전년도의 12월을 받아오므로
+
+           
+
+            if(selectedMonth==0&&selectedDay<6){
+
+                selectedYear--;
+                selectedMonth=12;
+
+            }
+
+
             const yearSkyCal = selectedYear % 10;
+            //천간은 열개니까 십을 나눠
+
             const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;
+            //0으로 끝나는 해는 "경"으로 시작하니까 data 에 있는 
+            //지지배열 인덱스 6번의 값을 대입해줘야함.
+            
+
             let monthSkyCal = null;
             console.log(this.data.sky[yearSky].name);
             switch (this.data.sky[yearSky].name) {
@@ -60,7 +105,7 @@ class Logic{
             //2월부터 시작하니까 1을 빼줌. 
 
             let monthSkyCal3=0;
-            if(monthSkyCal2==-1){
+            if(monthSkyCal2+monthSkyCal<0){
             monthSkyCal3=9;
             }else{
                 monthSkyCal3 = monthSkyCal + monthSkyCal2 < 10 ? monthSkyCal + monthSkyCal2 : monthSkyCal + monthSkyCal2 - 10;
@@ -70,74 +115,74 @@ class Logic{
     
             switch (monthSkyCal3) {
                 case 2:
-                    if (selectedDay < 5) {
+                    if (selectedDay < 4) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
                 case 3:
-                    if (selectedDay < 7) {
+                    if (selectedDay < 6 ){
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
     
                 case 4:
-                    if (selectedDay < 6) {
+                    if (selectedDay < 5) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     
                     }
                     break;
                 case 5:
-                    if (selectedDay < 6) {
+                    if (selectedDay < 5) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
     
                 case 6:
-                    if (selectedDay < 7) {
+                    if (selectedDay < 6) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
     
                     }
                     break;
     
                 case 7:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
     
                     }
                     break;
     
                 case 8:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                       
                     }
                     break;
     
                 case 9:
-                    if (selectedDay < 9) {
+                    if (selectedDay < 8) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
     
                 case 10:
-                    if (selectedDay < 9) {
+                    if (selectedDay < 8) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
     
                 case 11:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
     
                 case 0:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
                     break;
                 case 1:
-                    if (selectedDay < 7) {
+                    if (selectedDay < 6) {
                         monthSky = monthSkyCal3 == 0 ? 9 : monthSkyCal3-1;
                     }
     
@@ -159,70 +204,70 @@ class Logic{
             let test = 0
             switch (test) {
                 case 2:
-                    if (selectedDay < 5) {
+                    if (selectedDay < 4) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
                 case 3:
-                    if (selectedDay < 7) {
+                    if (selectedDay < 6) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 4:
-                    if (selectedDay < 6) {
+                    if (selectedDay < 5) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
                 case 5:
-                    if (selectedDay < 6) {
+                    if (selectedDay < 5) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 6:
-                    if (selectedDay < 7) {
+                    if (selectedDay < 6) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 7:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 8:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 9:
-                    if (selectedDay < 9) {
+                    if (selectedDay < 8) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 10:
-                    if (selectedDay < 9) {
+                    if (selectedDay < 8) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 11:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
     
                 case 0:
-                    if (selectedDay < 8) {
+                    if (selectedDay < 7) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
                     break;
                 case 1:
-                    if (selectedDay < 7) {
+                    if (selectedDay < 6) {
                         monthGround = monthGroundCal ==0 ? 11 : monthGroundCal-1;
                     }
     
