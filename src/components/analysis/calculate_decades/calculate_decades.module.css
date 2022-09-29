@@ -38,3 +38,7 @@ display: flex;
 flex-direction: column;
 }
 
+.pillar .span{
+    border:1px solid black;
+}
+

@@ -68,10 +68,16 @@ const Analysis = (props) => {
          timeGround={timeGround}
          selectedGender={selectedGender}
         ></CalculateDecades>
+        <div className={styles.explain}>↔양 옆으로 드래그하세요</div>
+
         <div className={styles.text}>세운</div>
         <CalYears></CalYears>
+        <div className={styles.explain}>↔양 옆으로 드래그하세요</div>
+
         <div className={styles.text}>월운</div>
         <CalMonths></CalMonths>
+        <div className={styles.explain}>↔양 옆으로 드래그하세요</div>
+
     </div>
   )
 }
