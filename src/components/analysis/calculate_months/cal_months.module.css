@@ -9,17 +9,15 @@
 }
 
 
-
-
 @media(min-width:700px){
 
 
     .container::-webkit-scrollbar{
+   
     }
     
     .container::-webkit-scrollbar-thumb{
-        background-color:slategray;
-           
+   
     }
     
     .container::-webkit-scrollbar-track {
@@ -27,7 +25,6 @@
     
 
 }
-
 
 /* ::-webkit-scrollbar {
     display: none;
@@ -38,3 +35,8 @@ display: flex;
 flex-direction: column;
 }
 
+
+.months{
+    font-size: .5rem;
+    margin:5px;
+}

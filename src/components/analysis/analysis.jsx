@@ -5,6 +5,7 @@ import CalculateDecades from './calculate_decades/calculate_decades';
 import Logic from '../logic/logic';
 import { useState } from 'react';
 import CalYears from './calculate_years/cal_years';
+import CalMonths from './calculate_months/cal_months';
 
 
 const Analysis = (props) => {
@@ -41,7 +42,7 @@ const Analysis = (props) => {
   
   return (
     <div className={styles.container}>
-        <div>오행분포</div>
+        <div className={styles.text}>오행분포</div>
         <CalFiveElements
             yearSky={yearSky}
             yearGround={yearGround}
@@ -52,7 +53,7 @@ const Analysis = (props) => {
             timeSky={timeSky}
             timeGround={timeGround}
         ></CalFiveElements>
-        <div>대운</div>
+        <div className={styles.text}>대운</div>
         <CalculateDecades
         selectedYear={selectedYear}
         selectedMonth={selectedMonth}
@@ -67,8 +68,10 @@ const Analysis = (props) => {
          timeGround={timeGround}
          selectedGender={selectedGender}
         ></CalculateDecades>
-        <div>세운</div>
+        <div className={styles.text}>세운</div>
         <CalYears></CalYears>
+        <div className={styles.text}>월운</div>
+        <CalMonths></CalMonths>
     </div>
   )
 }
