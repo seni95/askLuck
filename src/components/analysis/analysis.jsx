@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './analysis.module.css'
-import CalFiveElements from './analysis_logic/cal_five_elements';
+import CalFiveElements from './cal_five_elements/cal_five_elements';
 import CalculateDecades from './calculate_decades/calculate_decades';
 import Logic from '../logic/logic';
 
@@ -22,8 +22,8 @@ const Analysis = (props) => {
     // const selectedDay = 21;
     // const selectedTime = "09:50";
 
-    const yearSky = logic.returnYearSky(selectedYear);
-    const yearGround = logic.returnYearGround(selectedYear);
+    const yearSky = logic.returnYearSky(selectedYear,selectedMonth,selectedDay);
+    const yearGround = logic.returnYearGround(selectedYear,selectedMonth,selectedDay);
 
     const monthSky = logic.returnMonthSky(selectedYear, selectedMonth, selectedDay);
     const monthGround = logic.returnMonthGround(selectedMonth, selectedDay);
