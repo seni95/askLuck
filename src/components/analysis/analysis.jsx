@@ -3,9 +3,13 @@ import styles from './analysis.module.css'
 import CalFiveElements from './cal_five_elements/cal_five_elements';
 import CalculateDecades from './calculate_decades/calculate_decades';
 import Logic from '../logic/logic';
+import { useState } from 'react';
+import CalYears from './calculate_years/cal_years';
 
 
 const Analysis = (props) => {
+
+    const [selectedDecades, setSelectedDecades] = useState(); 
 
     const logic = new Logic();
 
@@ -63,6 +67,8 @@ const Analysis = (props) => {
          timeGround={timeGround}
          selectedGender={selectedGender}
         ></CalculateDecades>
+        <div>세운</div>
+        <CalYears></CalYears>
     </div>
   )
 }

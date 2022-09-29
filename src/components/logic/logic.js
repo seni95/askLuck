@@ -21,9 +21,7 @@ class Logic{
 
             //따라서 한연도 전의 값을 계산함
 
-            console.log(
-                "따라서 한연도 전의 값을 계산함"
-            );
+      
             
             const yearSkyCal = selectedYear % 10;
             const yearSky = yearSkyCal + 6 < 10 ? yearSkyCal + 6 : yearSkyCal + 6 - 10;

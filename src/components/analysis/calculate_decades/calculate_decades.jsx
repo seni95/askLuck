@@ -139,7 +139,6 @@ const CalculateDecades = (props) => {
 
         }
 
-        console.log(decadesResult);
 
     }
 
@@ -147,10 +146,8 @@ const CalculateDecades = (props) => {
     const returnDecadesSky = () => {
         if (gender == "남자") {
             if (yearSky.sign == "양") {
-                console.log("남자, 양");
                 goStraight();
             } else if (yearSky.sign == "음") {
-                console.log("남자, 음");
                 gobackwards();
             }
 

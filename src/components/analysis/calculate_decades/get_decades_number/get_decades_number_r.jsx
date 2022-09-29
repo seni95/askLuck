@@ -16,9 +16,6 @@ const GetDecadesNumberR = (props) => {
     const order= props.order;
     const dateTotalCount = new Date(selectedYear, selectedMonth-1<0?11:selectedMonth-1, 0).getDate();
 
-
-    let toCalResult = 0;
-
   
   return (
     <>
