@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import Logic from '../logic/logic';
 import styles from './four_pillar_viewer.module.css';
 import CalculateFamily from '../logic/calculate_family';
+import { useState } from 'react';
 
 const FourPillarViewer = (props) => {
 
@@ -32,14 +33,29 @@ const FourPillarViewer = (props) => {
     const timeSky = logic.returnTimeSky(selectedYear, selectedMonth, selectedDay, selectedTime);
     const timeGround = logic.returnTimeGround(selectedTime);
 
+    const [detailKey,setDetailKey] = useState(false);
 
-
-
+    const showDetail=()=>{
+        if(!detailKey){
+            setDetailKey(true);
+            console.log(detailKey+"토글완");
+        }else{
+            setDetailKey(false);
+            console.log(detailKey+"토글완");
+        }
+    }
     
 
     return (
         <div className={styles.container}>
+<div className={styles.showDetail}>
+<div className={styles.toggleSwitch} id={detailKey==0?"":"toggledSwitch"}>
+  <span className={styles.toggleButton} onClick={showDetail}
+  id={detailKey==0?"":"toggledButton"}></span>
+</div>
+</div>
 
+        <div className={styles.pillarsContainer}>
             <div className={styles.pillars}>
                 <span>년</span>
                 <span><CalculateFamily daySky = {daySky} sky={yearSky}></CalculateFamily></span>
@@ -97,7 +113,11 @@ const FourPillarViewer = (props) => {
                 <span><CalculateFamily daySky = {daySky} ground={timeGround}></CalculateFamily></span>
 
             </div>
+            </div>
 
+            {detailKey &&
+            <div>test</div>
+            }
         </div>
     )
 }

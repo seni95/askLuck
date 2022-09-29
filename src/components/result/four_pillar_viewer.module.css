@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 .container{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
     position: relative;
     background: #f9f9f9;
     margin: auto;
     margin-top:50px;
-    padding: 50px;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
+}
+.pillarsContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 50px;
+    padding-top:10px;
 
-    
-
+   
 }
 .pillars{
     display: flex;
@@ -50,3 +52,41 @@
 span{
     text-align: center;
 }
+
+.toggleSwitch {
+    width: 4rem;
+    margin: 2rem;
+    height: 1rem;
+    display: block;
+    position: relative;
+    border-radius: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 1rem 3px rgba(0 0 0 / 15%);
+    cursor: pointer;
+  }
+  
+  .toggleSwitch .toggleButton {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50%;
+    left: .2rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: slategray;
+  }
+  
+
+      /* 체크박스가 체크되면 변경 이벤트 */
+  
+  
+
+  .toggleSwitch, .toggleButton {
+    transition: all 0.2s ease-in;
+  }
+
+ .showDetail{
+    font-size: .5rem;
+    display: flex;
+    justify-content: flex-end;
+ }

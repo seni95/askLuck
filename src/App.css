@@ -45,3 +45,13 @@ html, body{
   #green{
     background-color: darkolivegreen;
   }
+
+  #toggledSwitch {
+    background: slategray;
+  }
+  
+  #toggledButton {
+    left: calc(100% - 2.3rem);
+    background:#fff;
+  }
+  
