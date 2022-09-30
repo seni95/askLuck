@@ -3,10 +3,13 @@ import Logic from '../logic/logic';
 import styles from './four_pillar_viewer.module.css';
 import CalculateFamily from '../logic/calculate_family';
 import { useState } from 'react';
+import ShowHop from './result_detail/showHop';
+import Data from '../data/data';
 
 const FourPillarViewer = (props) => {
 
     const logic = new Logic();
+    const data = new Data();
 
     const selectedYear = props.selectedYear;
     const selectedMonth = props.selectedMonth;
@@ -94,6 +97,12 @@ const FourPillarViewer = (props) => {
                 id={dayGround.color}>
                     {dayGround.code}
                 </span>
+                <span>
+                <span>{data.sky[dayGround.innerAttri.charAt(0)].code}</span>
+                <span>{data.sky[dayGround.innerAttri.charAt(1)].code}</span>
+                <span>{data.sky[dayGround.innerAttri.charAt(2)].code}</span>
+                </span>
+                
                 <span><CalculateFamily daySky = {daySky} ground={dayGround}></CalculateFamily></span>
 
             </div>
@@ -116,7 +125,16 @@ const FourPillarViewer = (props) => {
             </div>
 
             {detailKey &&
-            <div>test</div>
+            <ShowHop
+            yearSky={yearSky}
+            monthSky={monthSky}
+            daySky={daySky}
+            timeSky={timeSky}
+            yearGround={yearGround}
+            monthGround={monthGround}
+            dayGround={dayGround}
+            timeGround={timeGround}
+            ></ShowHop>
             }
         </div>
     )

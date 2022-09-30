@@ -1,15 +1,12 @@
 header{
-  background-color:lightslategray;
+  /* background-color:gray; */
   /* background: linear-gradient(0deg, rgba(137,138,166,1) 0%, rgba(201,187,207,1) 100%); */
-  color:white;
-    display: flex;
-    border-radius: 0 0 5px 5px;
   /* box-shadow: 0px 10px 11px -3px rgba(0,0,0,0.75); */
   /* color:white; */
-  box-shadow: 0 4px 4px -4px black;
-  height:80px;
-  align-items: flex-end;
-  padding-left:20px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  
 }
 
 
@@ -20,4 +17,30 @@ header *{
 
 h1{
   font-size: 1.3rem;
+
+  text-align: center;
+}
+
+nav{
+width:90%;
+display: flex;
+justify-content: space-around;
+margin:0 auto;
+}
+
+a{
+  color:black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn{
+  width: 50%;
+  border:none;
+  border-bottom:3px solid lightgray;
+}
+
+.btn:hover{
+  border-bottom:3px solid pink;
+  cursor:pointer;
 }

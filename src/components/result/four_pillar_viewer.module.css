@@ -3,8 +3,7 @@
 .container{
     position: relative;
     background: #f9f9f9;
-    margin: auto;
-    margin-top:50px;
+    margin: 20px auto 0 auto;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
 }
@@ -55,7 +54,7 @@ span{
 
 .toggleSwitch {
     width: 4rem;
-    margin: 2rem;
+    margin: 1rem;
     height: 1rem;
     display: block;
     position: relative;

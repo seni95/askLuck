@@ -14,18 +14,18 @@ class Data{
         ];
 
         this.ground = [
-            { name: "자", symbol: "수", sign: "음", key: 11 ,code:"子",color:"black"},
-            { name: "축", symbol: "토", sign: "음", key: 12 ,code:"丑",color:"yellow"},
-            { name: "인", symbol: "목", sign: "양", key: 13 ,code:"寅",color:"green"},
-            { name: "묘", symbol: "목", sign: "음", key: 14 ,code:"卯",color:"green"},
-            { name: "진", symbol: "토", sign: "양", key: 15 ,code:"辰",color:"yellow"},
-            { name: "사", symbol: "화", sign: "양", key: 16 ,code:"巳",color:"red"},
-            { name: "오", symbol: "화", sign: "음", key: 17 ,code:"午",color:"red"},
-            { name: "미", symbol: "토", sign: "음", key: 18 ,code:"未",color:"yellow"},
-            { name: "신", symbol: "금", sign: "양", key: 19 ,code:"申",color:"white"},
-            { name: "유", symbol: "금", sign: "음", key: 20 ,code:"酉",color:"white"},
-            { name: "술", symbol: "토", sign: "양", key: 21 ,code:"戌",color:"yellow"},
-            { name: "해", symbol: "수", sign: "양", key: 22 ,code:"亥",color:"black"},
+            { name: "자", symbol: "수", sign: "음", key: 11 ,code:"子",color:"black",innerAttri:"899"},
+            { name: "축", symbol: "토", sign: "음", key: 12 ,code:"丑",color:"yellow",innerAttri:"975"},
+            { name: "인", symbol: "목", sign: "양", key: 13 ,code:"寅",color:"green",innerAttri:"420"},
+            { name: "묘", symbol: "목", sign: "음", key: 14 ,code:"卯",color:"green",innerAttri:"011"},
+            { name: "진", symbol: "토", sign: "양", key: 15 ,code:"辰",color:"yellow",innerAttri:"194"},
+            { name: "사", symbol: "화", sign: "양", key: 16 ,code:"巳",color:"red",innerAttri:"462"},
+            { name: "오", symbol: "화", sign: "음", key: 17 ,code:"午",color:"red",innerAttri:"253"},
+            { name: "미", symbol: "토", sign: "음", key: 18 ,code:"未",color:"yellow",innerAttri:"315"},
+            { name: "신", symbol: "금", sign: "양", key: 19 ,code:"申",color:"white",innerAttri:"486"},
+            { name: "유", symbol: "금", sign: "음", key: 20 ,code:"酉",color:"white",innerAttri:"677"},
+            { name: "술", symbol: "토", sign: "양", key: 21 ,code:"戌",color:"yellow",innerAttri:"734"},
+            { name: "해", symbol: "수", sign: "양", key: 22 ,code:"亥",color:"black",innerAttri:"408"},
         ]
     
 

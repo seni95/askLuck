@@ -6,6 +6,12 @@ const Header = () => {
     <header>
         <h1>ASKLUCK</h1>
         <nav>
+          <button className={styles.btn}>
+          <a href="#">만세력</a>
+          </button>
+          <button className={styles.btn}>
+          <a href="https://askluck.net">blog</a>
+          </button>
         </nav>
     </header>
   )
