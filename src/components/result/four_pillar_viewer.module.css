@@ -12,53 +12,13 @@
     border:1px solid black;
 } */
 
-.pillarsContainer{
-}
 
-.pillarsContainer{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    padding: 50px;
-    padding-top:10px;
-    font-weight: 500;
-   
-}
-.pillars{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5rem;
-}
-
-.pillars *{
-
-    
-}
-
-.element{
-    font-size:3rem;
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 4rem;
-}
 
 *{
     /* color:pink; */
 }
 
-.green{
-    color:blue;
-    background-color: chartreuse;
-}
 
-.blue{
-    background-color: gold;
-}
-.red{
-    
-}
-span{
-    text-align: center;
-}
 
 .toggleSwitch {
     width: 4rem;
@@ -96,4 +56,23 @@ span{
     font-size: .5rem;
     display: flex;
     justify-content: flex-end;
+ }
+
+
+ table{
+    border-collapse: collapse;
+    border:.2px dashed slategray;
+    margin:0 auto;
+}
+ th,td{
+    border:.2px dashed slategray;
+    text-align: center;
+ }
+
+ tr:nth-child() td{
+    font-size: 2rem;
+ }
+
+ .sky td,.ground td{
+    font-size: 3.5rem;
  }
