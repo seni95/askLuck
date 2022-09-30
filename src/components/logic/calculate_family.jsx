@@ -1,7 +1,7 @@
 import React from 'react'
 import Data from '../data/data'
 
-const calculateFamily = (props) => {
+const CalculateFamily = (props) => {
 
     const data = new Data();
 
@@ -107,4 +107,4 @@ const calculateFamily = (props) => {
   )
 }
 
-export default calculateFamily
+export default CalculateFamily

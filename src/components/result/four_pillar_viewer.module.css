@@ -7,6 +7,14 @@
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
 } */
+
+/* .container *{
+    border:1px solid black;
+} */
+
+.pillarsContainer{
+}
+
 .pillarsContainer{
     display: flex;
     flex-direction: row-reverse;

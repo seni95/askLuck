@@ -5,6 +5,7 @@ import CalculateFamily from '../logic/calculate_family';
 import { useState } from 'react';
 import ShowHop from './result_detail/showHop';
 import Data from '../data/data';
+import CalculateInnerAttri from '../logic/calculate_innerAttri';
 
 const FourPillarViewer = (props) => {
 
@@ -70,6 +71,14 @@ const FourPillarViewer = (props) => {
                 id={yearGround.color}>
                     {yearGround.code}
                 </span>
+
+                <span>
+                <CalculateInnerAttri
+                ground={yearGround}
+                daySky={daySky}
+                ></CalculateInnerAttri>
+                </span>
+
                 <span><CalculateFamily daySky = {daySky} ground={yearGround}></CalculateFamily></span>
             </div>
             <div className={styles.pillars}>
@@ -82,6 +91,12 @@ const FourPillarViewer = (props) => {
                 <span className={`${styles.element} ${styles.ground}`}
                 id={monthGround.color}>
                     {monthGround.code}
+                </span>
+                <span>
+                <CalculateInnerAttri
+                ground={monthGround}
+                daySky={daySky}
+                ></CalculateInnerAttri>
                 </span>
                 <span><CalculateFamily daySky = {daySky} ground={monthGround}></CalculateFamily></span>
 
@@ -98,9 +113,10 @@ const FourPillarViewer = (props) => {
                     {dayGround.code}
                 </span>
                 <span>
-                <span>{data.sky[dayGround.innerAttri.charAt(0)].code}</span>
-                <span>{data.sky[dayGround.innerAttri.charAt(1)].code}</span>
-                <span>{data.sky[dayGround.innerAttri.charAt(2)].code}</span>
+                <CalculateInnerAttri
+                ground={dayGround}
+                daySky={daySky}
+                ></CalculateInnerAttri>
                 </span>
                 
                 <span><CalculateFamily daySky = {daySky} ground={dayGround}></CalculateFamily></span>
@@ -118,6 +134,12 @@ const FourPillarViewer = (props) => {
                 id={timeGround.color}
                 >
                     {timeGround.code}
+                </span>
+                <span>
+                <CalculateInnerAttri
+                ground={timeGround}
+                daySky={daySky}
+                ></CalculateInnerAttri>
                 </span>
                 <span><CalculateFamily daySky = {daySky} ground={timeGround}></CalculateFamily></span>
 
