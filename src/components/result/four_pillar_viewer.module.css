@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-.container{
+/* .container{
     position: relative;
     background: #f9f9f9;
     margin: 20px auto 0 auto;
     border-radius: 10px;
     box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
-}
+} */
 .pillarsContainer{
     display: flex;
     flex-direction: row-reverse;
