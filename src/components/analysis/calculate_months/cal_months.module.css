@@ -3,7 +3,7 @@
     flex-flow: row-reverse;
     /* flex-direction: ; */
     flex-wrap: nowrap;
-    width:250px;
+    /* width:250px; */
     overflow-x: scroll;
 
 }

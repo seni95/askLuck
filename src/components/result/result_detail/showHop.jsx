@@ -52,7 +52,8 @@ const ShowHop = (props) => {
         skyHopArr[i] = <div>을경합금</div>;
         i++;
       }
-    
+      if(skyHopArr[i]==null)
+      return null;
       return skyHopArr;
     }
     //방합을 구하는 함수
@@ -92,13 +93,16 @@ const ShowHop = (props) => {
         if(ground[2]=="인"||ground[2]=="묘"||ground[2]=="진")
         return <div>인묘진 합목</div>
       }
-      
+      return null;
     }
 
   return (
     <div>
       {figureSkyHop()}
       {figureBangHop()}
+      {!figureSkyHop()&&!figureBangHop()&&
+      <div>합/충 없음</div>
+      }
     </div>
   )
 }

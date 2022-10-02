@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.container{
+    
+}
+
 .result{
     display: flex;
     flex-direction: row;

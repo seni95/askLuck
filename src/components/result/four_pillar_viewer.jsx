@@ -52,12 +52,12 @@ const FourPillarViewer = (props) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.showDetail}>
+            {/* <div className={styles.showDetail}>
                 <div className={styles.toggleSwitch} id={detailKey == 0 ? "" : "toggledSwitch"}>
                     <span className={styles.toggleButton} onClick={showDetail}
                         id={detailKey == 0 ? "" : "toggledButton"}></span>
                 </div>
-            </div>
+            </div> */}
             <table>
                 <th>시</th>
                 <th>일</th>
@@ -157,21 +157,21 @@ const FourPillarViewer = (props) => {
                         <span><CalculateFamily daySky={daySky} ground={yearGround}></CalculateFamily></span>
                     </td>
                 </tr>
-
+               <tr>
+               <td colspan="4">
+               <ShowHop
+               yearSky={yearSky}
+               monthSky={monthSky}
+               daySky={daySky}
+               timeSky={timeSky}
+               yearGround={yearGround}
+               monthGround={monthGround}
+               dayGround={dayGround}
+               timeGround={timeGround}
+                 ></ShowHop>
+               </td>
+           </tr>
             </table>
-
-            {detailKey &&
-                <ShowHop
-                    yearSky={yearSky}
-                    monthSky={monthSky}
-                    daySky={daySky}
-                    timeSky={timeSky}
-                    yearGround={yearGround}
-                    monthGround={monthGround}
-                    dayGround={dayGround}
-                    timeGround={timeGround}
-                ></ShowHop>
-            }
         </div>
     )
 }

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-/* .container{
-    position: relative;
-    background: #f9f9f9;
+.container{
+ 
+padding-top:120px;
+  /* position: relative;
     margin: 20px auto 0 auto;
-    border-radius: 10px;
-    box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
-} */
+    box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75); */
+}
 
 /* .container *{
     border:1px solid black;
@@ -61,11 +61,11 @@
 
  table{
     border-collapse: collapse;
-    border:.2px dashed slategray;
+    border:.2px solid rgba(112,128,144,0.4);
     margin:0 auto;
 }
  th,td{
-    border:.2px dashed slategray;
+    border:.2px solid rgba(112,128,144,0.4);
     text-align: center;
  }
 

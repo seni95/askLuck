@@ -3,10 +3,10 @@
     flex-direction: row;
     justify-content: center;
     position: relative;
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
     margin: 30px auto;
     border-radius: 10px;
-    box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75);
+    /* box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75); */
     font-size: 2rem;
     padding:30px;
     padding-top:10px;
