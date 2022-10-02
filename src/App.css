@@ -17,7 +17,7 @@ html, body{
     height: auto;
     justify-content: center;
     flex-direction: column;
-    width:500px;
+    max-width:500px;
     padding:0;
     position: relative;
     box-shadow: 0px 35px 100px -35px rgba(0,0,0,0.4);
