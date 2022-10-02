@@ -4,7 +4,7 @@
     /* flex-direction: ; */
     flex-wrap: nowrap;
     overflow-x: scroll;
-
+    justify-content: flex-start;
 }
 
 
@@ -33,11 +33,14 @@
     } */
 
 .pillar{
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
+
 .pillar .span{
-    border:1px solid black;
+    border:1.5px solid rgba(112,128,144,0.4);
+    text-align: center;
+    margin:0;
 }
 

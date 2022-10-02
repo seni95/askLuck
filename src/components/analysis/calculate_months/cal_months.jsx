@@ -19,7 +19,7 @@ const CalMonths = () => {
 
       const showCurrentMonths =()=>{
         let forkey = 0;
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
                 const returnMonthSky = logic.returnMonthSky(today.year,i,15);
             monthSkyArr.push(
                 <>
@@ -32,7 +32,7 @@ const CalMonths = () => {
         }
 
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
     const returnMonthGround = logic.returnMonthGround(i,15);
 
             monthGroundArr.push(<>
@@ -46,7 +46,7 @@ const CalMonths = () => {
 
         }
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
             monthResultArr.push(<span className={styles.pillar}>
                 {monthSkyArr[i]}
                 {monthGroundArr[i]}

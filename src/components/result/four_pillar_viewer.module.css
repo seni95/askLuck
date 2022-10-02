@@ -19,6 +19,10 @@ padding-top:20px;
 }
 
 
+.element{
+  width:100%;
+  
+}
 
 .toggleSwitch {
     width: 4rem;
@@ -73,6 +77,6 @@ padding-top:20px;
     font-size: 2rem;
  }
 
- .sky td,.ground td{
+.element{
     font-size: 3.5rem;
- }
+  }

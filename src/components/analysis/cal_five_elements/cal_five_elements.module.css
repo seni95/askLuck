@@ -10,15 +10,18 @@
 .result{
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
 }
 
-.textResult *v,.tableResult *{
- 
-}
+
 
 p{
     font-size: 1rem;
     padding-right: 5px;
+}
+
+.elementsContainer{
+    width:100%;
 }
 
 .showElements{

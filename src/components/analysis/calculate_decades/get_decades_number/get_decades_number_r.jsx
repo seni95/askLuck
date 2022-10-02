@@ -20,10 +20,10 @@ const GetDecadesNumberR = (props) => {
   return (
     <>
 
-   <h1 className={styles.h1}>
+   <div className={styles.h1}>
     {order!=0 && order}
     {cal_times_logic.decadesNumR(selectedMonth, selectedDay, monthIndex, dateTotalCount)}
-   </h1>
+   </div>
    </>
   )
 }

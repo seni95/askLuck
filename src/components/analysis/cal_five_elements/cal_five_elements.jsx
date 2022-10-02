@@ -99,7 +99,7 @@ const CalFiveElements = (props) => {
    
 
         return(
-            <div>
+            <div className={styles.elementsContainer}>
                 {calResult}
             </div>
         )
