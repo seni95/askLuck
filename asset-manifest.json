@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/askLuck/static/css/main.80f710d0.css",
-    "main.js": "/askLuck/static/js/main.8657bc4c.js",
+    "main.js": "/askLuck/static/js/main.1eaa2a2b.js",
     "static/js/787.68f75430.chunk.js": "/askLuck/static/js/787.68f75430.chunk.js",
     "static/media/logo.svg": "/askLuck/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/askLuck/index.html",
     "main.80f710d0.css.map": "/askLuck/static/css/main.80f710d0.css.map",
-    "main.8657bc4c.js.map": "/askLuck/static/js/main.8657bc4c.js.map",
+    "main.1eaa2a2b.js.map": "/askLuck/static/js/main.1eaa2a2b.js.map",
     "787.68f75430.chunk.js.map": "/askLuck/static/js/787.68f75430.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80f710d0.css",
-    "static/js/main.8657bc4c.js"
+    "static/js/main.1eaa2a2b.js"
   ]
 }
