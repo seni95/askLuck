@@ -52,7 +52,7 @@ const ShowHop = (props) => {
         skyHopArr[i] = <div>을경합금</div>;
         i++;
       }
-      if(skyHopArr[i]==null)
+      if(skyHopArr[0]==null)
       return null;
       return skyHopArr;
     }
