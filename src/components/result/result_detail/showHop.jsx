@@ -96,6 +96,14 @@ const ShowHop = (props) => {
       return null;
     }
 
+
+    const figureSomHop=()=>{
+      if(ground.indexOf("오")+1==ground.indexOf("인")){
+        
+      }
+    }
+
+
   return (
     <div>
       {figureSkyHop()}
