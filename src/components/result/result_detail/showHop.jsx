@@ -98,17 +98,136 @@ const ShowHop = (props) => {
 
 
     const figureSomHop=()=>{
-      if(ground.indexOf("오")+1==ground.indexOf("인")){
-        
+      const fireHop =["인","오","술"];
+      const goldHop=["사","유","축"];
+      const waterHop =["신","자","진"];
+      const treeHop=["해","묘","미"];
+
+      const sample1 =ground.slice(1,4);
+      const sample2 = ground.slice(2,5);
+
+     const checkFireHop1=fireHop.filter(x=>sample1.includes(x));
+     const checkFireHop2 = fireHop.filter(x=>sample2.includes(x));
+
+    if(checkFireHop1.length==3||checkFireHop2.length==3){
+        return <div> 인오술 삼합</div>;
       }
+
+     const checkGoldHop1=goldHop.filter(x=>sample1.includes(x));
+     const checkGoldHop2 = goldHop.filter(x=>sample2.includes(x));
+
+    if(checkGoldHop1.length==3||checkGoldHop2.length==3){
+        return <div> 사유축 삼합</div>;
+      }
+
+      const checkWaterHop1=waterHop.filter(x=>sample1.includes(x));
+      const checkWaterHop2 = waterHop.filter(x=>sample2.includes(x));
+ 
+     if(checkWaterHop1.length==3||checkWaterHop2.length==3){
+         return <div> 신자진 삼합</div>;
+       }
+ 
+       const checkTreeHop1=treeHop.filter(x=>sample1.includes(x));
+       const checkTreeHop2 = treeHop.filter(x=>sample2.includes(x));
+  
+      if(checkTreeHop1.length==3||checkTreeHop2.length==3){
+          return <div> 해묘미 삼합</div>;
+        }
+  
+return null;
     }
+
+    const figureBanHop=()=>{
+
+      let banHopResult=[];
+      let i=0;
+      //삼합이 한개라도 있으면 반합이 나올 수 없음.
+      if(!figureSomHop()){
+
+     //화국 반합
+     if(ground.includes("오")){
+      const fireLeft = ground.indexOf("오")-1;
+      const fireRight = ground.indexOf("오")+1;
+
+      if(ground[fireLeft]=="술"||ground[fireRight]=="술"){
+        banHopResult[i]=<div>오술 반합</div>;
+        i++;
+      }
+      if(ground[fireLeft]=="인"||ground[fireRight]=="인"){
+        banHopResult[i]=<div>인오 반합</div>;
+        i++;
+      }
+     }
+
+     //금국 반합
+
+     if(ground.includes("유")){
+      const goldLeft = ground.indexOf("유")-1;
+      const goldRight = ground.indexOf("유")+1;
+
+      if(ground[goldLeft]=="사"||ground[goldRight]=="사"){
+        banHopResult[i]=<div>사유 반합</div>;
+        i++;
+      }
+      if(ground[goldLeft]=="축"||ground[goldRight]=="축"){
+        banHopResult[i]=<div>유축 반합</div>;
+        i++;
+      }
+     }
+
+     //수국 반합
+
+     if(ground.includes("자")){
+      const waterLeft = ground.indexOf("자")-1;
+      const waterRight = ground.indexOf("자")+1;
+
+      if(ground[waterLeft]=="신"||ground[waterRight]=="신"){
+        banHopResult[i]=<div>신자 반합</div>;
+        i++;
+      }
+      if(ground[waterLeft]=="진"||ground[waterRight]=="진"){
+        banHopResult[i]=<div>자진 반합</div>;
+        i++;
+      }
+     }
+
+     //목국 반합
+
+     if(ground.includes("묘")){
+      const treeLeft = ground.indexOf("묘")-1;
+      const treeRight = ground.indexOf("묘")+1;
+
+      
+
+      if(ground[treeLeft]=="해"||ground[treeRight]=="해"){
+        banHopResult[i]=<div>해묘 반합</div>;
+        i++;
+      }
+      if(ground[treeLeft]=="미"||ground[treeRight]=="미"){
+        banHopResult[i]=<div>묘미 반합</div>;
+        i++;
+      }
+     }
+
+     if(banHopResult[0]==null)
+     return null;
+     return banHopResult;
+      }
+      return null;
+
+    }
+
+
+    
 
 
   return (
     <div>
       {figureSkyHop()}
       {figureBangHop()}
-      {!figureSkyHop()&&!figureBangHop()&&
+      {figureSomHop()}
+      {figureBanHop()}
+      {!figureSkyHop()&&!figureBangHop()&&!figureSomHop()&&!figureBanHop()&&
       <div>합/충 없음</div>
       }
     </div>
