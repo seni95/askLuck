@@ -219,7 +219,50 @@ return null;
 
 
     const figureSixHop=()=>{
-return null;
+
+
+      let sixHopResult=[];
+      let i=0;
+
+      const Za = ground.indexOf["자"];
+      if(ground[Za-1]=="축"||ground[Za+1]=="축"){
+        sixHopResult[i]=<div>자축합</div>;
+        i++;
+      }
+
+      const In = ground.indexOf["인"];
+      if(ground[In-1]=="해"||ground[In+1]=="해"){
+        sixHopResult[i]=<div>인해합</div>;
+        i++;
+      }
+
+      const Myo = ground.indexOf["묘"];
+      if(ground[Myo-1]=="술"||ground[Myo+1]=="술"){
+        sixHopResult[i]=<div>묘술합</div>;
+        i++;
+      }
+
+      const Jin = ground.indexOf["진"];
+      if(ground[Jin-1]=="유"||ground[Jin+1]=="유"){
+        sixHopResult[i]=<div>진유합</div>;
+        i++;
+      }
+
+      const Sa = ground.indexOf["사"];
+      if(ground[Sa-1]=="신"||ground[Sa+1]=="신"){
+        sixHopResult[i]=<div>사신합</div>;
+        i++;
+      }
+
+      const Ow = ground.indexOf["오"];
+      if(ground[Ow-1]=="미"||ground[Ow+1]=="미"){
+        sixHopResult[i]=<div>오미합</div>;
+        i++;
+      }
+
+      if(sixHopResult[0]==null)
+      return null;
+      return sixHopResult;
     }
 
 
