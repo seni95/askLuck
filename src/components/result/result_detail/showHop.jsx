@@ -218,7 +218,9 @@ return null;
     }
 
 
-    
+    const figureSixHop=()=>{
+return null;
+    }
 
 
   return (
@@ -227,7 +229,8 @@ return null;
       {figureBangHop()}
       {figureSomHop()}
       {figureBanHop()}
-      {!figureSkyHop()&&!figureBangHop()&&!figureSomHop()&&!figureBanHop()&&
+      {figureSixHop()}
+      {!figureSkyHop()&&!figureBangHop()&&!figureSomHop()&&!figureBanHop()&&!figureSixHop()&&
       <div>합/충 없음</div>
       }
     </div>
