@@ -6,6 +6,7 @@ import { useState } from 'react';
 import ShowHop from './result_detail/showHop';
 import Data from '../data/data';
 import CalculateInnerAttri from '../logic/calculate_innerAttri';
+import ShowPlusMinus from './result_detail/showPlusMinus';
 
 const FourPillarViewer = (props) => {
 
@@ -156,6 +157,22 @@ const FourPillarViewer = (props) => {
                     <td>
                         <span><CalculateFamily daySky={daySky} ground={yearGround}></CalculateFamily></span>
                     </td>
+                </tr>
+
+                <tr>
+            <td>
+                <span><ShowPlusMinus sky={timeSky} ground={timeGround}></ShowPlusMinus></span>
+            
+            </td>
+            <td>
+                <span><ShowPlusMinus sky={daySky} ground={dayGround}></ShowPlusMinus></span>
+            </td> 
+            <td>
+                <span><ShowPlusMinus sky={monthSky} ground={monthGround}></ShowPlusMinus></span>
+            </td> 
+            <td>
+                <span><ShowPlusMinus sky={yearSky} ground={yearGround}></ShowPlusMinus></span>
+            </td>
                 </tr>
                <tr>
                <td colspan="4">

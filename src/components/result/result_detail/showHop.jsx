@@ -267,6 +267,7 @@ return null;
       return sixHopResult;
     }
 
+    
 
   return (
     <div>
@@ -276,7 +277,7 @@ return null;
       {figureBanHop()}
       {figureSixHop()}
       {!figureSkyHop()&&!figureBangHop()&&!figureSomHop()&&!figureBanHop()&&!figureSixHop()&&
-      <div>합/충 없음</div>
+      <div>합 없음</div>
       }
     </div>
   )
