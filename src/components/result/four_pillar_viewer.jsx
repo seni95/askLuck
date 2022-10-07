@@ -7,6 +7,7 @@ import ShowHop from './result_detail/showHop';
 import Data from '../data/data';
 import CalculateInnerAttri from '../logic/calculate_innerAttri';
 import ShowPlusMinus from './result_detail/showPlusMinus';
+import ShowChung from './result_detail/showChung';
 
 const FourPillarViewer = (props) => {
 
@@ -186,6 +187,18 @@ const FourPillarViewer = (props) => {
                dayGround={dayGround}
                timeGround={timeGround}
                  ></ShowHop>
+
+                 <ShowChung
+                  yearSky={yearSky}
+                  monthSky={monthSky}
+                  daySky={daySky}
+                  timeSky={timeSky}
+                  yearGround={yearGround}
+                  monthGround={monthGround}
+                  dayGround={dayGround}
+                  timeGround={timeGround}
+                 > 
+                 </ShowChung>
                </td>
            </tr>
             </table>
