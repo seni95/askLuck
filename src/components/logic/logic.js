@@ -279,7 +279,7 @@ class Logic{
     
         returnDaySky = (selectedYear, selectedMonth, selectedDay) => {
             const standard = new Date(1925, 0, 10);
-            console.log(standard);
+            //갑
             const daySkyCal = new Date(selectedYear, selectedMonth, selectedDay);
             const diffDate = daySkyCal.getTime() - standard.getTime();
             const diffDateResult = Math.abs(diffDate / (1000 * 60 * 60 * 24));

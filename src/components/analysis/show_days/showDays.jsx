@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./showDays.module.css";
-
+import Logic from "../../logic/logic";
+import Data from "../../data/data";
 const cx = classNames.bind(styles);
 
 const ShowDays = () => {
@@ -15,6 +16,9 @@ const ShowDays = () => {
   const [selectedYear, setSelectedYear] = useState(today.year); //현재 선택된 연도
   const [selectedMonth, setSelectedMonth] = useState(today.month); //현재 선택된 달
   const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate(); //선택된 연도, 달의 마지막 날짜
+
+  const logic = new Logic();
+  const data = new Data();
 
   const prevMonth = useCallback(() => {
     //이전 달 보기 보튼
@@ -112,6 +116,14 @@ const ShowDays = () => {
 
     for (const nowDay of week) {
       const day = new Date(selectedYear, selectedMonth - 1, 1).getDay();
+      const daySky = logic.returnDaySky(selectedYear,selectedMonth-1,1).name;
+      const dayGround = logic.returnDayGround(selectedYear,selectedMonth-1,1).name;
+
+      const skyNum = data.sky.findIndex(i=>i.name==daySky);
+      const groundNum = data.ground.findIndex(i=>i.name==dayGround);
+
+      
+
       if (week[day] === nowDay) {
         for (let i = 0; i < dateTotalCount; i++) {
           dayArr.push(
@@ -145,8 +157,11 @@ const ShowDays = () => {
                     ).getDay() === 6,
                 }
               )}
-            >
+
+            > 
               {i + 1}
+            {data.sky[i+skyNum<10?i+skyNum:(i+skyNum)%10].code}
+            {data.ground[i+groundNum<12?i+groundNum:(i+groundNum)%12].code}일
             </div>
           );
         }
