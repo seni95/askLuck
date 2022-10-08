@@ -6,6 +6,7 @@ import Logic from '../logic/logic';
 import { useState } from 'react';
 import CalYears from './calculate_years/cal_years';
 import CalMonths from './calculate_months/cal_months';
+import ShowDays from './show_days/showDays';
 
 
 const Analysis = (props) => {
@@ -77,7 +78,7 @@ const Analysis = (props) => {
         <div className={styles.text}>월운</div>
         <CalMonths></CalMonths>
         <div className={styles.explain}>↔양 옆으로 드래그하세요</div>
-
+        <ShowDays></ShowDays>
     </div>
   )
 }
