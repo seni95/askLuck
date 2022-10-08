@@ -1,5 +1,8 @@
 import React, { useCallback, useState } from "react";
+import classNames from "classnames/bind";
+import styles from "./showDays.module.css";
 
+const cx = classNames.bind(styles);
 
 const ShowDays = () => {
   const today = {
@@ -90,6 +93,11 @@ const ShowDays = () => {
       weekArr.push(
         <div
           key={v}
+          className={cx(
+            { weekday: true },
+            { sunday: v === "일" },
+            { saturday: v === "토" }
+          )}
         >
           {v}
         </div>
@@ -109,14 +117,41 @@ const ShowDays = () => {
           dayArr.push(
             <div
               key={i + 1}
-              
+              className={cx(
+                {
+                  //오늘 날짜일 때 표시할 스타일 클라스네임
+                  today:
+                    today.year === selectedYear &&
+                    today.month === selectedMonth &&
+                    today.date === i + 1,
+                },
+                { weekday: true }, //전체 날짜 스타일
+                {
+                  //전체 일요일 스타일
+                  sunday:
+                    new Date(
+                      selectedYear,
+                      selectedMonth - 1,
+                      i + 1
+                    ).getDay() === 0,
+                },
+                {
+                  //전체 토요일 스타일
+                  saturday:
+                    new Date(
+                      selectedYear,
+                      selectedMonth - 1,
+                      i + 1
+                    ).getDay() === 6,
+                }
+              )}
             >
               {i + 1}
             </div>
           );
         }
       } else {
-        dayArr.push(<div className="weekday"></div>);
+        dayArr.push(<div className={styles.weekday}></div>);
       }
     }
 
@@ -124,18 +159,18 @@ const ShowDays = () => {
   }, [selectedYear, selectedMonth, dateTotalCount]);
 
   return (
-    <div className="container">
-      <div className="title">
+    <div className={styles.container}>
+      <div className={styles.title}>
         <h3>
           {yearControl()}년 {monthControl()}월
         </h3>
-        <div className="pagination">
+        <div className={styles.pagination}>
           <button onClick={prevMonth}>◀︎</button>
           <button onClick={nextMonth}>▶︎</button>
         </div>
       </div>
-      <div className="week">{returnWeek()}</div>
-      <div className="date">{returnDay()}</div>
+      <div className={styles.week}>{returnWeek()}</div>
+      <div className={styles.date}>{returnDay()}</div>
     </div>
   );
 };
