@@ -159,7 +159,7 @@ const ShowDays = () => {
               )}
 
             > 
-              {i + 1}
+              {i + 1}<br></br>
             {data.sky[i+skyNum<10?i+skyNum:(i+skyNum)%10].code}
             {data.ground[i+groundNum<12?i+groundNum:(i+groundNum)%12].code}일
             </div>

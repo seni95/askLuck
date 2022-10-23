@@ -160,6 +160,25 @@ const ShowChung = (props) => {
           }        
         
         }
+
+        if(ground.includes("술")){
+          const sulLeft = ground.indexOf("술")-1;
+          const sulRight = ground.indexOf("술")+1;
+
+          if(ground[sulLeft]=="축"||ground[sulRight]=="축")
+          {
+            hyungResult[i] = <div>축술형</div>;
+            i++;
+          }
+        
+          if(ground[sulLeft]=="미"||ground[sulRight]=="미")
+          {
+            hyungResult[i] = <div>술미형</div>;
+            i++;
+          }
+
+        }
+
         if(hyungResult[0]==null)
         return null;
         return hyungResult;
