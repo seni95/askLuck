@@ -97,10 +97,85 @@ const ShowChung = (props) => {
 
     }
 
+    const figureSomHyung = ()=>{
+      const inSaSin = ["인","사","신"];
+      const chuckSulMe = ["축","술","미"];
+
+      const sample1 =ground.slice(1,4);
+      const sample2 = ground.slice(2,5);
+
+      const checkInSaSin1 = inSaSin.filter(x=>sample1.includes(x));
+      const checkInSaSin2 = inSaSin.filter(x=>sample2.includes(x));
+
+      if(checkInSaSin1.length==3||checkInSaSin2.length==3){
+        return <div>인사신 삼형</div>;
+      }
+
+
+      const checkChuckSulMe1 = chuckSulMe.filter(x=>sample1.includes(x));
+      const checkChuckSulMe2 = chuckSulMe.filter(x=>sample2.includes(x));
+
+      if(checkChuckSulMe1.length===3||checkChuckSulMe2.length===3){
+        return <div>축술미 삼형</div>;
+      }
+ 
+      return null;
+      
+    }
+
+    const figureHyung = ()=>{
+      let hyungResult = [];
+      let i=0;
+
+      if(!figureSomHyung()){
+        //삼형이 하나라도 있으면 다른 형은 나올 수 없음
+
+
+        //자묘형 찾기
+        if(ground.includes("자")){
+          const zaLeft = ground.indexOf("자")-1;
+          const zaRight = ground.indexOf("자")+1;
+
+          if(ground[zaLeft]=="묘"||ground[zaRight]=="묘")
+         {
+          hyungResult[i]=<div>자묘형</div>;
+          i++;
+         }
+        }
+
+        if(ground.includes("사")){
+          const saLeft = ground.indexOf("사")-1;
+          const saRight = ground.indexOf("사")+1;
+
+          if(ground[saLeft]=="인"||ground[saRight]=="인")
+          {
+            hyungResult[i] = <div>인사형</div>;
+            i++;
+          }
+        
+          if(ground[saLeft]=="신"||ground[saRight]=="신")
+          {
+            hyungResult[i] = <div>사신형</div>;
+            i++;
+          }        
+        
+        }
+        if(hyungResult[0]==null)
+        return null;
+        return hyungResult;
+
+      }
+
+
+
+    }
+
   return (
     <div>
         {figureSkyChung()}
         {figureGroundChung()}
+        {figureSomHyung()}
+        {figureHyung()}
         </div>
   )
 }

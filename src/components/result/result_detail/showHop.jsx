@@ -106,7 +106,7 @@ const ShowHop = (props) => {
       const sample1 =ground.slice(1,4);
       const sample2 = ground.slice(2,5);
 
-     const checkFireHop1=fireHop.filter(x=>sample1.includes(x));
+     const checkFireHop1 = fireHop.filter(x=>sample1.includes(x));
      const checkFireHop2 = fireHop.filter(x=>sample2.includes(x));
 
     if(checkFireHop1.length==3||checkFireHop2.length==3){
