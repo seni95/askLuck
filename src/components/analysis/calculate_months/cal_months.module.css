@@ -39,6 +39,7 @@ flex-direction: column;
 .pillar .span{
     border:1.5px solid rgba(112,128,144,0.4);
     text-align: center;
+    width: 100%;
 
 }
 

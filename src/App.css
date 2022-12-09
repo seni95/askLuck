@@ -10,7 +10,9 @@ html, body{
 
   
 }
-
+*{
+  box-sizing: border-box;
+}
 .App{
   width: 750px;
     display: flex;
@@ -27,7 +29,7 @@ html, body{
   }
 
 
-  @media(max-width:700px){
+  @media(max-width:750px){
    .App{
    margin:auto;
    width: 100%;
