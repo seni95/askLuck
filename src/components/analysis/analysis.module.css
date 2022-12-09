@@ -5,13 +5,12 @@
     position: relative;
     margin: 30px auto;
     padding:0;
-    width:90%;
+    width:87%;
     align-items: center;
-    /* background-color: white; */
 }
 
 .container *{
-    width: 80%;
+    width: 100%;
 }
 
 .text{
