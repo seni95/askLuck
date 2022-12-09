@@ -5,11 +5,13 @@
     position: relative;
     /* background: #f9f9f9; */
     margin: 30px auto;
-    border-radius: 10px;
     /* box-shadow: 9px 5px 45px -26px rgba(0,0,0,0.75); */
     font-size: 2rem;
-    padding:30px;
+    padding:20px;
     padding-top:10px;
+    width: 87%;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
+    background-color: white;
 }
 
 @media(max-width:700px){
@@ -53,15 +55,18 @@ h2{
 }
 
 input,select{
-   
-    background-color: #e7e9eb;
-    border-radius: 5px;
-    border:0.8px solid rgb(129, 122, 122);
+    background-color:#F1F1F5;
+    border:none;
     font-size: 1.5rem;
 
 }
 
-input[type="button"]{
+.form{
+    width: 100%;
+    padding:0;
+}
+
+input[type="button"],button{
     display: block;
     position: relative;
     padding: 0;
@@ -69,21 +74,18 @@ input[type="button"]{
     font-weight: 600;
     text-align: center;
     line-height: 40px;
-    border-radius: 5px;
     transition: all 0.2s ;
     cursor: pointer;
     border:none;
-    background-color:lightgrey;
-    color: black;
+    background-color:#6524FF;
+    color: white;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.75);
 
 }
 
 input[type="button"].checked, button.checked{
-    border:3px solid gray;
+    border:3px solid #6524FF;
 
 }
 
 
-button{
- border:1px solid gray;
-}

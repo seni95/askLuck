@@ -206,7 +206,7 @@ const InputBirthday = (props) => {
   return (
     <div className={styles.container}>
 
-      <form action="" onSubmit={onSubmit}>
+      <form className={styles.form} action="" onSubmit={onSubmit}>
         <div className={styles.genderSelect} ref={inputGender}>
           <input type="button" onClick={selectMan}
             value="남자" className={selectedGender=="남자"?styles.checked:""} 
