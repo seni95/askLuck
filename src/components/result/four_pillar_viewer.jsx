@@ -119,25 +119,25 @@ const FourPillarViewer = (props) => {
                 </tr>
 
                 <tr>
-                    <td> <span>
+                    <td> <span className={styles.innerAttri}>
                         <CalculateInnerAttri
                             ground={timeGround}
                             daySky={daySky}
                         ></CalculateInnerAttri>
                     </span></td>
-                    <td>  <span>
+                    <td>  <span className={styles.innerAttri}>
                         <CalculateInnerAttri
                             ground={dayGround}
                             daySky={daySky}
                         ></CalculateInnerAttri>
                     </span></td>
-                    <td>  <span>
+                    <td>  <span className={styles.innerAttri}>
                         <CalculateInnerAttri
                             ground={monthGround}
                             daySky={daySky}
                         ></CalculateInnerAttri>
                     </span></td>
-                    <td> <span>
+                    <td> <span className={styles.innerAttri}>
                         <CalculateInnerAttri
                             ground={yearGround}
                             daySky={daySky}
