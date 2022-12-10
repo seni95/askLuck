@@ -243,7 +243,7 @@ const InputBirthday = (props) => {
           <input type="number" ref={inputMinutes} max="59" min="00" placeholder='00' />분
         </div>
         <div className={styles.toSubmit}>
-<button>제출</button>
+<button className={styles.button}>제출</button>
 
         </div>
         
