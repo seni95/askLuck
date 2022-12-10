@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/askLuck/static/css/main.f09dd0f7.css",
-    "main.js": "/askLuck/static/js/main.1c76dbec.js",
+    "main.css": "/askLuck/static/css/main.ff076f7a.css",
+    "main.js": "/askLuck/static/js/main.0a8e553a.js",
     "static/js/787.68f75430.chunk.js": "/askLuck/static/js/787.68f75430.chunk.js",
     "static/media/logo.svg": "/askLuck/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/askLuck/index.html",
-    "main.f09dd0f7.css.map": "/askLuck/static/css/main.f09dd0f7.css.map",
-    "main.1c76dbec.js.map": "/askLuck/static/js/main.1c76dbec.js.map",
+    "main.ff076f7a.css.map": "/askLuck/static/css/main.ff076f7a.css.map",
+    "main.0a8e553a.js.map": "/askLuck/static/js/main.0a8e553a.js.map",
     "787.68f75430.chunk.js.map": "/askLuck/static/js/787.68f75430.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f09dd0f7.css",
-    "static/js/main.1c76dbec.js"
+    "static/css/main.ff076f7a.css",
+    "static/js/main.0a8e553a.js"
   ]
 }
