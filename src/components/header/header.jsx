@@ -4,7 +4,7 @@ import styles from './header.module.css'
 const Header = () => {
   return (
     <header>
-        <h1>ASKLUCK</h1>
+        <h1>사주보는 고양이</h1>
         <nav>
         </nav>
     </header>

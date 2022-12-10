@@ -180,8 +180,8 @@ const ShowDays = () => {
           {yearControl()}년 {monthControl()}월
         </h3>
         <div className={styles.pagination}>
-          <button onClick={prevMonth}>◀︎</button>
-          <button onClick={nextMonth}>▶︎</button>
+          <button className={styles.button} onClick={prevMonth}>◀︎</button>
+          <button className={styles.button} onClick={nextMonth}>▶︎</button>
         </div>
       </div>
       <div className={styles.week}>{returnWeek()}</div>

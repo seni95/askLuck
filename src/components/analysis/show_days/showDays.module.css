@@ -18,7 +18,7 @@ button {
   align-self: center;
 }
 .container .title .pagination .button {
-  border: none;
+  border: 1px solid var(--color-unselected);
   background: none;
 }
 
